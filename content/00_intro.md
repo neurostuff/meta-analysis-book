@@ -1,4 +1,4 @@
-# Meta-Analyses in Python
+# Neuroimaging Meta-Analyses in Python
 
 ```{tableofcontents}
 ```
