@@ -2,9 +2,12 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: 00_intro
 chapters:
-- file: download_data
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: 01_overview
+- file: 02_planning_and_preparation
+- file: 03_curation
+- file: 04_extraction
+- file: 05_specification
+- file: 06_execution
+- file: 07_interpretation
