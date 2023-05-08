@@ -1,4 +1,4 @@
-## Curation
+# Curation
 
 While creating your precise question, thinking about your inclusion and exclusion criteria, and deriving your search strategy is intellectually challenging, the curation stage of the process is the most time consuming.
 Here is where you will need to be patient and diligent while reading through the studies you've found and identifying which studies are eligible for inclusion in your meta-analysis.
