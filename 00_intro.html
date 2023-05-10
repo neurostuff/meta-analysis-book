@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Neuroimaging Meta-Analyses in Python &#8212; An Introduction to Neuroimaging Meta-Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '00_intro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overview" href="01_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">An Introduction to Neuroimaging Meta-Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Neuroimaging Meta-Analyses in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Manually curated meta-analysis walkthrough</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_planning_and_preparation.html">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_curation.html">Curation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_extraction.html">Data extraction/collection from studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_specification.html">Methods to choose from</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_execution.html">Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_interpretation.html">interpretation of results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep dives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">External Meta-Analytic Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html">OHBM 2021 NiMARE tutorial</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/00_intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Neuroimaging Meta-Analyses in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meta-analysis">What is meta-analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-you-want-to-do-a-meta-analysis">Why would you want to do a meta-analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-meta-analysis-in-neuroimaging-different-from-your-standard-effect-size-meta-analysis">How is meta-analysis in neuroimaging different from your standard, effect-size meta-analysis?</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="neuroimaging-meta-analyses-in-python">
+<h1>Neuroimaging Meta-Analyses in Python<a class="headerlink" href="#neuroimaging-meta-analyses-in-python" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manually curated meta-analysis walkthrough</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_planning_and_preparation.html">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_curation.html">Curation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_extraction.html">Data extraction/collection from studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_specification.html">Methods to choose from</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_execution.html">Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_interpretation.html">interpretation of results</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep dives</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">External Meta-Analytic Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html">OHBM 2021 NiMARE tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#goals-for-this-tutorial">Goals for this tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#before-we-start-let-s-download-the-necessary-data-only-if-running-locally">Before we start, let’s download the necessary data <strong>only</strong> if running locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#basics-of-nimare-datasets">Basics of NiMARE datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#running-meta-analyses">Running meta-analyses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#meta-analytic-functional-decoding">Meta-Analytic Functional Decoding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html#exercise-run-a-macm-and-decode-an-roi">Exercise: Run a MACM and Decode an ROI</a></li>
+</ul>
+</div>
+<section id="what-is-meta-analysis">
+<h2>What is meta-analysis?<a class="headerlink" href="#what-is-meta-analysis" title="Permalink to this heading">#</a></h2>
+<p>Meta-analysis is the re-use, and often aggregation, of previously computed statistical results. Analyzing previously computed results, often across several published studies, in this way is used to find consensus and/or parse differences across studies of a similar topic or paradigm.</p>
+<p>Meta-analysis leans on relatively light-weight data representations (e.g., published tabular data) and, thus, does not require the original source of data. This allows wide reuse without the privacy concerns or computational resources necessary for re-analysis of primary datasets. Further, published results are often more accessible than original data sources, making it possible to synthesize many independent sources of information.</p>
+</section>
+<section id="why-would-you-want-to-do-a-meta-analysis">
+<h2>Why would you want to do a meta-analysis?<a class="headerlink" href="#why-would-you-want-to-do-a-meta-analysis" title="Permalink to this heading">#</a></h2>
+<p>In the face of replication crises–such as those plaguing neuroimaging,  psychology, and cancer research–being able to aggregate results in this way is particularly valuable. Researchers can use meta-analysis to identify consistency across studies and papers. Neuroimaging meta-analyses, specifically, can allow researchers to find consistency across relatively homogeneous or related groups of studies, regardless of individual study sample sizes, pipeline differences, and intrinsic differences in functional neuroanatomy between study samples (i.e., <span id="id1">[<a class="reference internal" href="#id8" title="Rosario Pintos Lobo, Katherine L. Bottenhorn, Michael C. Riedel, Afra I. Toma, Megan M. Hare, Donisha D. Smith, Alexandra C. Moor, Isis K. Cowan, Javier A. Valdes, Jessica E. Bartley, Taylor Salo, Emily R. Boeving, Brianna Pankey, Matthew T. Sutherland, Erica D. Musser, and Angela R. Laird. Neural systems underlying RDoC social constructs: An activation likelihood estimation meta-analysis. July 2022. Pages: 2022.04.04.487016 Section: New Results. URL: https://www.biorxiv.org/content/10.1101/2022.04.04.487016v2 (visited on 2022-08-08), doi:10.1101/2022.04.04.487016.">PLBR+22</a>]</span>). On the other hand, meta-analysis can help identify a common effect across related, but distinct, studies <span id="id2">[<a class="reference internal" href="#id6" title="Jessica E. Bartley, Emily R. Boeving, Michael C. Riedel, Katherine L. Bottenhorn, Taylor Salo, Simon B. Eickhoff, Eric Brewe, Matthew T. Sutherland, and Angela R. Laird. Meta-analytic evidence for a core problem solving network across multiple representational domains. Neuroscience and biobehavioral reviews, 92:318–337, September 2018. URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6425494/ (visited on 2020-10-01), doi:10.1016/j.neubiorev.2018.06.009.">BBR+18</a>]</span>.</p>
+<p>Further, neuroimaging meta-analyses can be used to generate hypotheses for future primary data analysis, as well. Meta-analytically generated brain networks or regions of interest (ROIs) that are significantly activated across a cognitive or behavioral paradigm can be used in subsequent analyses (e.g., for limited field-of-view, functional connectivity, or psychophysiological interaction studies). Data-driven classification of a larger set of studies into distinct categories based on similarity of brain activations can be used to investigate or propose underlying cognitive/neurobiological models of complex processing <span id="id3">[<a class="reference internal" href="#id14" title="Katherine L. Bottenhorn, Jessica S. Flannery, Emily R. Boeving, Michael C. Riedel, Simon B. Eickhoff, Matthew T. Sutherland, and Angela R. Laird. Cooperating yet distinct brain networks engaged during naturalistic paradigms: A meta-analysis of functional MRI results. Network Neuroscience, 3(1):27–48, October 2018. URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6326731/ (visited on 2020-10-01), doi:10.1162/netn_a_00050.">BFB+18</a>, <a class="reference internal" href="#id10" title="Jessica S. Flannery, Michael C. Riedel, Katherine L. Bottenhorn, Ranjita Poudel, Taylor Salo, Lauren D. Hill-Bowen, Angela R. Laird, and Matthew T. Sutherland. Meta-analytic clustering dissociates brain activity and behavior profiles across reward processing paradigms. Cognitive, affective &amp; behavioral neuroscience, 20(2):215–235, April 2020. URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7117996/ (visited on 2022-08-08), doi:10.3758/s13415-019-00763-7.">FRB+20</a>, <a class="reference internal" href="#id9" title="Angela R Laird, Michael C Riedel, Matthew T Sutherland, Simon B Eickhoff, Kimberly L Ray, Angela M Uecker, P Mickle Fox, Jessica A Turner, and Peter T Fox. Neural architecture underlying classification of face perception paradigms. NeuroImage, 119:70–80, 2015. doi:10.1016/j.neuroimage.2015.06.044.">LRS+15</a>, <a class="reference internal" href="#id7" title="Michael C. Riedel, Julio A. Yanes, Kimberly L. Ray, Simon B. Eickhoff, Peter T. Fox, Matthew T. Sutherland, and Angela R. Laird. Dissociable meta-analytic brain networks contribute to coordinated emotional processing. Human Brain Mapping, 39(6):2514–2531, 2018. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/hbm.24018. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.24018 (visited on 2022-08-08), doi:10.1002/hbm.24018.">RYR+18</a>]</span>. Further, meta-analyses can be useful in identifying common neural phenomena shared by multiple, seemingly distinct psychiatric diagnoses <span id="id4">[<a class="reference internal" href="#id11" title="Jules R. Dugré, Simon B. Eickhoff, and Stéphane Potvin. Meta-analytical transdiagnostic neural correlates in common pediatric psychiatric disorders. Scientific Reports, 12(1):4909, March 2022. Number: 1 Publisher: Nature Publishing Group. URL: https://www.nature.com/articles/s41598-022-08909-3 (visited on 2022-08-08), doi:10.1038/s41598-022-08909-3.">DEP22</a>, <a class="reference internal" href="#id13" title="Delfina Janiri, Dominik A. Moser, Gaelle E. Doucet, Maxwell J. Luber, Alexander Rasgon, Won Hee Lee, James W. Murrough, Gabriele Sani, Simon B. Eickhoff, and Sophia Frangou. Shared Neural Phenotypes for Mood and Anxiety Disorders: A Meta-analysis of 226 Task-Related Functional Imaging Studies. JAMA Psychiatry, 77(2):172–179, February 2020. URL: https://doi.org/10.1001/jamapsychiatry.2019.3351 (visited on 2022-08-08), doi:10.1001/jamapsychiatry.2019.3351.">JMD+20</a>, <a class="reference internal" href="#id12" title="Nils Opel, Janik Goltermann, Marco Hermesdorf, Klaus Berger, Bernhard T. Baune, and Udo Dannlowski. Cross-Disorder Analysis of Brain Structural Abnormalities in Six Major Psychiatric Disorders: A Secondary Analysis of Mega- and Meta-analytical Findings From the ENIGMA Consortium. Biological Psychiatry, 88(9):678–686, November 2020. URL: https://www.sciencedirect.com/science/article/pii/S0006322320315857 (visited on 2022-08-08), doi:10.1016/j.biopsych.2020.04.027.">OGH+20</a>]</span>.</p>
+</section>
+<section id="how-is-meta-analysis-in-neuroimaging-different-from-your-standard-effect-size-meta-analysis">
+<h2>How is meta-analysis in neuroimaging different from your standard, effect-size meta-analysis?<a class="headerlink" href="#how-is-meta-analysis-in-neuroimaging-different-from-your-standard-effect-size-meta-analysis" title="Permalink to this heading">#</a></h2>
+<p>A standard meta-analysis aggregates results across a single measure. Neuroimaging meta-analyses are a special case because:</p>
+<ul class="simple">
+<li><p>data from a single statistical analysis of neuroimaging often include more than one effect size (e.g., multiple significant voxels, represented by stereotaxic coordinates)</p></li>
+<li><p>stereotaxic coordinates include spatial information, in addition to effect sizes and significance, and thus require additional processing</p></li>
+</ul>
+<p>There are two over-arching categories of neuroimaging meta-analyses, differentiated by the input data source. <em>Coordinate-based</em> meta-analyses are run on stereotaxic x-, y-, z-coordinate data, such as those published in neuroimaging papers, while <em>image-based</em> meta-analyses run on 3D statistical image data, such as those shared on various online repositories (e.g., NeuroVault, the Open Science Framework). There are several algorithms for both categories, but they are both distinguished from standard meta-analyses by both the volume of data per study/case (i.e., coordinates, voxels), the spatial information that is inherent to that data, and the assumptions of independence that those two features violate.</p>
+<div class="docutils container" id="id5">
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">BBR+18</a><span class="fn-bracket">]</span></span>
+<p>Jessica E. Bartley, Emily R. Boeving, Michael C. Riedel, Katherine L. Bottenhorn, Taylor Salo, Simon B. Eickhoff, Eric Brewe, Matthew T. Sutherland, and Angela R. Laird. Meta-analytic evidence for a core problem solving network across multiple representational domains. <em>Neuroscience and biobehavioral reviews</em>, 92:318–337, September 2018. URL: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6425494/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6425494/</a> (visited on 2020-10-01), <a class="reference external" href="https://doi.org/10.1016/j.neubiorev.2018.06.009">doi:10.1016/j.neubiorev.2018.06.009</a>.</p>
+</div>
+<div class="citation" id="id14" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">BFB+18</a><span class="fn-bracket">]</span></span>
+<p>Katherine L. Bottenhorn, Jessica S. Flannery, Emily R. Boeving, Michael C. Riedel, Simon B. Eickhoff, Matthew T. Sutherland, and Angela R. Laird. Cooperating yet distinct brain networks engaged during naturalistic paradigms: A meta-analysis of functional MRI results. <em>Network Neuroscience</em>, 3(1):27–48, October 2018. URL: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6326731/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6326731/</a> (visited on 2020-10-01), <a class="reference external" href="https://doi.org/10.1162/netn_a_00050">doi:10.1162/netn_a_00050</a>.</p>
+</div>
+<div class="citation" id="id11" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">DEP22</a><span class="fn-bracket">]</span></span>
+<p>Jules R. Dugré, Simon B. Eickhoff, and Stéphane Potvin. Meta-analytical transdiagnostic neural correlates in common pediatric psychiatric disorders. <em>Scientific Reports</em>, 12(1):4909, March 2022. Number: 1 Publisher: Nature Publishing Group. URL: <a class="reference external" href="https://www.nature.com/articles/s41598-022-08909-3">https://www.nature.com/articles/s41598-022-08909-3</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.1038/s41598-022-08909-3">doi:10.1038/s41598-022-08909-3</a>.</p>
+</div>
+<div class="citation" id="id10" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">FRB+20</a><span class="fn-bracket">]</span></span>
+<p>Jessica S. Flannery, Michael C. Riedel, Katherine L. Bottenhorn, Ranjita Poudel, Taylor Salo, Lauren D. Hill-Bowen, Angela R. Laird, and Matthew T. Sutherland. Meta-analytic clustering dissociates brain activity and behavior profiles across reward processing paradigms. <em>Cognitive, affective &amp; behavioral neuroscience</em>, 20(2):215–235, April 2020. URL: <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7117996/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7117996/</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.3758/s13415-019-00763-7">doi:10.3758/s13415-019-00763-7</a>.</p>
+</div>
+<div class="citation" id="id13" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">JMD+20</a><span class="fn-bracket">]</span></span>
+<p>Delfina Janiri, Dominik A. Moser, Gaelle E. Doucet, Maxwell J. Luber, Alexander Rasgon, Won Hee Lee, James W. Murrough, Gabriele Sani, Simon B. Eickhoff, and Sophia Frangou. Shared Neural Phenotypes for Mood and Anxiety Disorders: A Meta-analysis of 226 Task-Related Functional Imaging Studies. <em>JAMA Psychiatry</em>, 77(2):172–179, February 2020. URL: <a class="reference external" href="https://doi.org/10.1001/jamapsychiatry.2019.3351">https://doi.org/10.1001/jamapsychiatry.2019.3351</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.1001/jamapsychiatry.2019.3351">doi:10.1001/jamapsychiatry.2019.3351</a>.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">LRS+15</a><span class="fn-bracket">]</span></span>
+<p>Angela R Laird, Michael C Riedel, Matthew T Sutherland, Simon B Eickhoff, Kimberly L Ray, Angela M Uecker, P Mickle Fox, Jessica A Turner, and Peter T Fox. Neural architecture underlying classification of face perception paradigms. <em>NeuroImage</em>, 119:70–80, 2015. <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2015.06.044">doi:10.1016/j.neuroimage.2015.06.044</a>.</p>
+</div>
+<div class="citation" id="id12" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">OGH+20</a><span class="fn-bracket">]</span></span>
+<p>Nils Opel, Janik Goltermann, Marco Hermesdorf, Klaus Berger, Bernhard T. Baune, and Udo Dannlowski. Cross-Disorder Analysis of Brain Structural Abnormalities in Six Major Psychiatric Disorders: A Secondary Analysis of Mega- and Meta-analytical Findings From the ENIGMA Consortium. <em>Biological Psychiatry</em>, 88(9):678–686, November 2020. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0006322320315857">https://www.sciencedirect.com/science/article/pii/S0006322320315857</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.1016/j.biopsych.2020.04.027">doi:10.1016/j.biopsych.2020.04.027</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">PLBR+22</a><span class="fn-bracket">]</span></span>
+<p>Rosario Pintos Lobo, Katherine L. Bottenhorn, Michael C. Riedel, Afra I. Toma, Megan M. Hare, Donisha D. Smith, Alexandra C. Moor, Isis K. Cowan, Javier A. Valdes, Jessica E. Bartley, Taylor Salo, Emily R. Boeving, Brianna Pankey, Matthew T. Sutherland, Erica D. Musser, and Angela R. Laird. Neural systems underlying RDoC social constructs: An activation likelihood estimation meta-analysis. July 2022. Pages: 2022.04.04.487016 Section: New Results. URL: <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2022.04.04.487016v2">https://www.biorxiv.org/content/10.1101/2022.04.04.487016v2</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.1101/2022.04.04.487016">doi:10.1101/2022.04.04.487016</a>.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">RYR+18</a><span class="fn-bracket">]</span></span>
+<p>Michael C. Riedel, Julio A. Yanes, Kimberly L. Ray, Simon B. Eickhoff, Peter T. Fox, Matthew T. Sutherland, and Angela R. Laird. Dissociable meta-analytic brain networks contribute to coordinated emotional processing. <em>Human Brain Mapping</em>, 39(6):2514–2531, 2018. _eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/hbm.24018. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.24018">https://onlinelibrary.wiley.com/doi/abs/10.1002/hbm.24018</a> (visited on 2022-08-08), <a class="reference external" href="https://doi.org/10.1002/hbm.24018">doi:10.1002/hbm.24018</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="01_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-meta-analysis">What is meta-analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-would-you-want-to-do-a-meta-analysis">Why would you want to do a meta-analysis?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-meta-analysis-in-neuroimaging-different-from-your-standard-effect-size-meta-analysis">How is meta-analysis in neuroimaging different from your standard, effect-size meta-analysis?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Neurostuff Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
