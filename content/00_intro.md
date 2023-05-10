@@ -1,8 +1,5 @@
 # Neuroimaging Meta-Analyses in Python
 
-```{tableofcontents}
-```
-
 ## What is meta-analysis?
 
 Meta-analysis is the re-use, and often aggregation, of previously computed statistical results. Analyzing previously computed results, often across several published studies, in this way is used to find consensus and/or parse differences across studies of a similar topic or paradigm. 
