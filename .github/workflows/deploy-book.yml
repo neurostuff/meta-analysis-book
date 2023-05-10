@@ -1,7 +1,8 @@
 name: deploy-book
 
-# Only run this when the master branch changes
+# Only run this when the main branch changes
 on:
+  workflow_dispatch:
   push:
     branches:
     - main
