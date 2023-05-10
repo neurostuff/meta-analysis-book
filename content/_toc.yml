@@ -13,7 +13,6 @@ parts:
     - file: glossary
   - caption: Manually curated meta-analysis walkthrough
     chapters:
-    - file: 01_overview
     - file: 02_planning_and_preparation
     - file: 03_curation
     - file: 04_extraction
