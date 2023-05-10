@@ -4,6 +4,10 @@
 format: jb-book
 root: 00_intro
 parts:
+  - caption: OHBM Educational Course
+    chapters:
+    - file: getting_started
+    - file: tutorials
   - caption: Manually curated meta-analysis walkthrough
     chapters:
     - file: 01_overview
