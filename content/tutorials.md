@@ -102,7 +102,49 @@ section of each study and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Litical will need to be patient and thorough.
 
 
-
 ### Eligibility criteria
 
 We included studies in this meta-analysis that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). Studies examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no study exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.
+
+
+## Ingestion
+
+Horray, Dr. Litical has reached a critical milestone in her meta-analysis journey.
+Once the studies are ingested, Dr. Litical will be able to extract the data from each study.
+
+The ingestion process includes looking up the study on NeuroSynth-Compose's database and asking
+Dr. Litical if she would want to use a pre-existing study or create a new one.
+If Dr. Litical chooses to use a pre-existing study, then she will inherit all the data that was already extracted from that study, which will often include coordinates and will save her a lot of time during the extraction phase.
+
+## Extraction
+
+Dr. Litical is on a roll.
+She has now reached the extraction phase.
+In this phase, Dr. Litical will extract the data from each study, which will often include
+coordinates and annotations.
+
+Annotations are the method you will filter
+the analyses you include in your meta-analysis.
+By default you will have an "include" column,
+but you are free to add as many columns as you want for different categories of annotations.
+For example, in this meta-analysis, Dr. Litical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+
+While NeuroSynth-Compose has many studies already extracted, Dr. Litical will need to extract the data from some of the studies herself.
+
+NeuroSynth-Compose provides an interface to add the coordinates yourself.
+
+## Selection
+
+Dr. Litical is now ready to select the studies she wants to include in her meta-analysis.
+Since she already annotated all the studies in her meta-analysis, she can now filter the studies by the annotations she created.
+
+## Meta-analysis specification
+
+Dr. Litical is now ready to specify the algorithmic parameters for her meta-analysis.
+Dr. Litical is not trying to rock the boat so she specifies a run of the mill 
+ALE meta-analysis.
+
+## Running the meta-analysis
+
+She follows the google colab link and inserts the code that specifies the meta-analysis
+she wants to run.
