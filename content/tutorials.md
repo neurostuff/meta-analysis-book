@@ -40,8 +40,14 @@ She navigated to [compose.neurosynth.org](https://compose.neurosynth.org) and wa
 "Wow, this is so much better than the old NeuroSynth!" she thought.
 "Whoever designed this must be have put a lot of thought and care into the interface."
 She clicked on the "Sign In" button and was greeted with a login screen.
+
+![login](./figures/login_screen.png)
+
 She signed in with her Google account and was taken to the dashboard.
 The most prominant element of the dashboard was "Projects".
+
+![projects](./figures/project_page.png)
+
 "perfect!" she thought, I need to create a project.
 She clicked on the "New Project" button and a popup appeared asking for a name
 and description of the project.
@@ -62,19 +68,45 @@ and description:
 ```
 Nicotinic acetylcholine receptor (nAChR) agonists augment cognition among cigarette smokers and nonsmokers, yet the systems-level neurobiological mechanisms underlying such improvements are not fully understood. Aggregating neuroimaging results regarding nAChR agonists provides a means to identify common functional brain changes that may be related to procognitive drug effects.
 ```
+
+![new project](./figures/create_project.png)
+
+![new project view](./figures/new_project_view.png)
 ## Searching for studies
+
+![select prisma](./figures/select_prisma.png)
+
+![empty_curation_board](./figures/empty_curation_board.png)
+
+![pubmed_main_page](./figures/pubmed_main_page.png)
+
 
 Hopping over to Pubmed, Dr. Litical put the following in the advanced search box:
 ```
 ("fMRI" OR "PET" OR "neuroimaging" OR "Functional magnetic resonance imaging" OR "functional MRI") AND ("nicotine" OR "cigarette" OR "smok*" OR "DMXB-A") AND ("2011/01/01"[Date - Publication] : "2011/12/31"[Date - Publication])
 ```
+![advanced_search_query_pubmed](./figures/advanced_search_query_pubmed.png)
+
+![search_results](./figures/search_results.png)
+
+![download_search_results](./figures/download_search_results.png)
+
+![pmid_file](./figures/pmid_file.png)
 
 We are only searching for studies in 2011 to keep the results shorter.
 140 results! Oh no, that will still take too much time.
 Luckily Dr. Litical remembered that she had previously narrowed down a list of pubmed ids.
 She found the file and continued to the next step.
 
-** Here is the FILE **
+**[TUTORIAL PMID FILE](./data/tutorial_pmids.txt)**
+
+![import studies](./figures/import_studies.png)
+
+![select_search_source](./figures/select_search_source.png)
+
+![upload_pmid_file](./figures/upload_pmid_file.png)
+
+![display_imported_stubs](./figures/display_imported_stubs.png)
 
 Dr. Litical named the search
 "manually filtered nicotinic acetylcholine receptor agonists pubmed search" and clicked "Next".
@@ -82,6 +114,9 @@ There were no duplicates, so she clicked "Complete Import".
 
 ## Identification
 
+![identification](./figures/identification.png)
+
+![study_view_curation](./figures/study_view_curation.png)
 Dr. Litical was now presented with the list of studies that she had imported.
 While the import stage has handled any obvious
 duplicates, the Identification stage is where she will be able to identify any duplicates that were not caught automatically.
@@ -118,33 +153,43 @@ If Dr. Litical chooses to use a pre-existing study, then she will inherit all th
 
 ## Extraction
 
+![extraction_and_annotation](./figures/extraction_and_annotation.png)
 Dr. Litical is on a roll.
 She has now reached the extraction phase.
 In this phase, Dr. Litical will extract the data from each study, which will often include
 coordinates and annotations.
 
-Annotations are the method you will filter
-the analyses you include in your meta-analysis.
-By default you will have an "include" column,
-but you are free to add as many columns as you want for different categories of annotations.
-For example, in this meta-analysis, Dr. Litical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+Within the context of a meta-analysis, Annotations can be explained as a way to categorize analyses within each study.
+For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the analyses.
+For this replication, Dr. Litical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+By default you will have an "include" column to help get you started.
 
-While NeuroSynth-Compose has many studies already extracted, Dr. Litical will need to extract the data from some of the studies herself.
+In conjunction with annotating the analyses, Dr. Litical will also need to extract and/or edit the coordinates for each analysis.
+While NeuroSynth-Compose has many coordinates automatically extracted, Dr. Litical will need to extract the data from some of the analyses NeuroSynth-Compose has not seen before.
+Dr. Litical is estatic that almost half of the the studies already have coordinates extracted from the analyses.
 
-NeuroSynth-Compose provides an interface to add the coordinates yourself.
+For the rest, NeuroSynth-Compose provides an interface to add/edit coordinates.
+Dr. Litical can either directly add the coordinates on the website or she can upload a csv file with extracted coordinates.
 
-## Selection
+She skillfully add the coordinates for the remaining studies and is now ready to move on to the next stage.
 
-Dr. Litical is now ready to select the studies she wants to include in her meta-analysis.
-Since she already annotated all the studies in her meta-analysis, she can now filter the studies by the annotations she created.
 
 ## Meta-analysis specification
 
+Dr. Litical is now ready to select the analyses and specify the algorithm.
+She clicks on the "Meta-Analysis Specification" button and is presented with a wizard that will guide her through the process.
+She names this meta-analysis: "nicotinic agonist activations".
+
+For this particular meta-analysis she chooses "activation" and goes through a wizard
+to specify the algorithmic parameters for her meta-analysis.
 Dr. Litical is now ready to specify the algorithmic parameters for her meta-analysis.
-Dr. Litical is not trying to rock the boat so she specifies a run of the mill 
-ALE meta-analysis.
+She chooses ALE (Activation Likelihood Estimation) as the algorithm and selects
+8mm as the kernel size.
+She selects the Family Wise Error rate corrector (FWE) and uses montecarlo simulation to estimate the null distribution.
+She chooses 10000 iterations and 0.05 as the p-value threshold.
 
 ## Running the meta-analysis
 
+With the analyses selected and the algorithm chosen and specified, Dr. Litical is now ready to run the meta-analysis.
 She follows the google colab link and inserts the code that specifies the meta-analysis
 she wants to run.
