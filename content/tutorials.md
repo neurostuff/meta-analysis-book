@@ -219,4 +219,4 @@ she wants to run.
 
 ![colab_button](./figures/colab_button.png)
 
-![notebook_code]](./figures/notebook_code.png)
+![notebook_code](./figures/notebook_code.png)
