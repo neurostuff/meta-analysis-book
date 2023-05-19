@@ -154,6 +154,12 @@ If Dr. Litical chooses to use a pre-existing study, then she will inherit all th
 ## Extraction
 
 ![extraction_and_annotation](./figures/extraction_and_annotation.png)
+
+![annotate_and_extract_study](./figures/annotate_and_extract_study.png)
+
+![annotation_view](./figures/annotation_view.png)
+
+
 Dr. Litical is on a roll.
 She has now reached the extraction phase.
 In this phase, Dr. Litical will extract the data from each study, which will often include
@@ -168,23 +174,40 @@ In conjunction with annotating the analyses, Dr. Litical will also need to extra
 While NeuroSynth-Compose has many coordinates automatically extracted, Dr. Litical will need to extract the data from some of the analyses NeuroSynth-Compose has not seen before.
 Dr. Litical is estatic that almost half of the the studies already have coordinates extracted from the analyses.
 
+![study_with_no_analyses](./figures/study_with_no_analyses.png)
+
 For the rest, NeuroSynth-Compose provides an interface to add/edit coordinates.
 Dr. Litical can either directly add the coordinates on the website or she can upload a csv file with extracted coordinates.
 
+![add_coordinates](./figures/add_coordinates.png)
 She skillfully add the coordinates for the remaining studies and is now ready to move on to the next stage.
 
 
 ## Meta-analysis specification
 
+![proceed_meta_analysis](./figures/proceed_meta_analysis.png)
+
+![create_meta_analysis](./figures/create_meta_analysis.png)
+
+![name_meta_analysis](./figures/name_meta_analysis.png)
 Dr. Litical is now ready to select the analyses and specify the algorithm.
 She clicks on the "Meta-Analysis Specification" button and is presented with a wizard that will guide her through the process.
 She names this meta-analysis: "nicotinic agonist activations".
 
 For this particular meta-analysis she chooses "activation" and goes through a wizard
 to specify the algorithmic parameters for her meta-analysis.
+
+![select_column_activations](./figures/select_column_activations.png)
 Dr. Litical is now ready to specify the algorithmic parameters for her meta-analysis.
 She chooses ALE (Activation Likelihood Estimation) as the algorithm and selects
 8mm as the kernel size.
+![algorithm_overview](./figures/algorithm_overview.png)
+
+![algorithm_parameters](./figures/algorithm_parameters.png)
+
+![corrector_parameters](./figures/corrector_parameters.png)
+
+![parameter_review](./figures/parameter_review.png)
 She selects the Family Wise Error rate corrector (FWE) and uses montecarlo simulation to estimate the null distribution.
 She chooses 10000 iterations and 0.05 as the p-value threshold.
 
@@ -193,3 +216,7 @@ She chooses 10000 iterations and 0.05 as the p-value threshold.
 With the analyses selected and the algorithm chosen and specified, Dr. Litical is now ready to run the meta-analysis.
 She follows the google colab link and inserts the code that specifies the meta-analysis
 she wants to run.
+
+![colab_button](./figures/colab_button.png)
+
+![notebook_code]](./figures/notebook_code.png)
