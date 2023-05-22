@@ -1,18 +1,20 @@
-# Tutorials
+# Tutorial
 
-For this tutorial we are using a slimmed down replication of the Nicotine Administration Meta-Analysis.
-In this tutorial you will gain experience with the following:
+For this tutorial we are using a slimmed down replication of 
+[Neurobiological impact of nicotinic acetylcholine receptor agonists: An ALE meta-analysis of pharmacological neuroimaging studies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4494985/).
+
+After this tutorial, you will gain a basic understanding of how to use NeuroSynth-Compose to conduct a meta-analysis. Specifcially, you will learn about:
 
 1. Creating a project
-2. searching for studies on pubmed
-3. adding studies to a project
-4. curating studies using PRISMA guidelines
-5. extracting data from analyses within studies
-6. specifying a meta-analysis
-7. running a meta-analysis
-8. viewing meta-analysis results
-9. interpreting meta-analysis results
-10. deciding on follow-up analyses
+2. Searching for studies on pubmed
+3. Adding studies to a project
+4. Curating studies using PRISMA guidelines
+5. Extracting data from analyses within studies
+6. Specifying a meta-analysis
+7. Executing a meta-analysis
+8. Displaying meta-analytic images
+9. Interpreting meta-analytic results
+10. Considerations for follow-up analyses
 
 We will be following Dr. Annie Litical as she conducts a meta-analysis on the effects of nicotine administration on brain activity, but is in an enourmous rush to get it done before the end of the day.
 
@@ -35,7 +37,7 @@ Your Boss: Dr. I. M. Portant
 (And yet, she did not regret it.)
 She had to think of something fast.
 Dr. Litical scrambled to her computer and opened up the browser.
-She knew some of her colleagues had been using NeuroSynth-Compose to conduct meta-analyses, and thought she might be able to use it to get some results, and then she could add to them once she had more time.
+She knew some of her colleagues had been using NeuroSynth-Compose to conduct meta-analyses, and thought she might be able to use it to get some results, and then she could add to her meta-analysis once she had more time.
 She navigated to [compose.neurosynth.org](https://compose.neurosynth.org) and was immediately struck by the beautiful design.
 "Wow, this is so much better than the old NeuroSynth!" she thought.
 "Whoever designed this must be have put a lot of thought and care into the interface."
@@ -48,7 +50,7 @@ The most prominant element of the dashboard was "Projects".
 
 ![projects](./figures/project_page.png)
 
-"perfect!" she thought, I need to create a project.
+"Perfect!" she thought, I need to create a project.
 She clicked on the "New Project" button and a popup appeared asking for a name
 and description of the project.
 "Bugger!", Dr. Litical cursed under her breath, she had not decided on a topic for her meta-analysis.
@@ -59,24 +61,42 @@ One stuck out to her: `Neurobiological impact of nicotinic acetylcholine recepto
 She had taken a neurobiology class in college and the class had a whole section on nicotinic acetylcholine
 receptors.
 Dr. Litical was back in business.
-NOTE: One should have given proper thought on what their meta-analysis is about, and have talked to their mentors and collaborators beforehand.
+
+:::{important}
+This tutorial is not a recommendation on how one should choose a topic for meta-analysis. One should give proper thought on what their meta-analysis is about, and have talked to their mentors and collaborators beforehand.
+:::
+
+![new project](./figures/create_project.png)
+
 She the following information for name:
 ```
 Replication of: Neurobiological impact of nicotinic acetylcholine receptor agonists
 ```
+
 and description:
 ```
 Nicotinic acetylcholine receptor (nAChR) agonists augment cognition among cigarette smokers and nonsmokers, yet the systems-level neurobiological mechanisms underlying such improvements are not fully understood. Aggregating neuroimaging results regarding nAChR agonists provides a means to identify common functional brain changes that may be related to procognitive drug effects.
 ```
 
-![new project](./figures/create_project.png)
-
 ![new project view](./figures/new_project_view.png)
+
+After clicking "Create", she was taken to her new project.
+Dr. Litical's next step is to curate the studies she wants to include in her meta-analysis.
+
+
 ## Searching for studies
+
+Dr. Litical clicked within the box "Curation: Get Started", and was presented with
+three options: "PRISMA Workflow", "Simple Workflow", and "Custom Workflow".
 
 ![select prisma](./figures/select_prisma.png)
 
+Since Dr. Litical is replicating a manually curated meta-analysis, she selcted the "PRISMA Workflow".
+
 ![empty_curation_board](./figures/empty_curation_board.png)
+
+She was presented with an empty curation board, with 4 sections: "Identification",
+"Screening", "Eligibility", and "Included".
 
 ![pubmed_main_page](./figures/pubmed_main_page.png)
 
