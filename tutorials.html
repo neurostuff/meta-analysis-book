@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial &#8212; An Introduction to Neuroimaging Meta-Analysis</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)" href="02_planning_and_preparation.html" />
+    <link rel="prev" title="NeuroSynth Compose Glossary" href="glossary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00_intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">An Introduction to Neuroimaging Meta-Analysis</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00_intro.html">
+                    Neuroimaging Meta-Analyses in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Overview</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sign_up.html">Neurosynth-Compose account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">NeuroSynth Compose Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manually curated meta-analysis walkthrough</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_planning_and_preparation.html">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_curation.html">Curation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_extraction.html">Data extraction/collection from studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_specification.html">Methods to choose from</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_execution.html">Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_interpretation.html">interpretation of results</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep dives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="resources.html">External Meta-Analytic Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html">OHBM 2021 NiMARE tutorial</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tutorials.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening">Screening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility-criteria">Eligibility criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion">Ingestion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction">Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis-specification">Meta-analysis specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-meta-analysis">Running the meta-analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">interpreting the results</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h1>
+<p>For this tutorial we are using a slimmed down replication of
+<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4494985/">Neurobiological impact of nicotinic acetylcholine receptor agonists: An ALE meta-analysis of pharmacological neuroimaging studies</a>.</p>
+<p>After this tutorial, you will gain a basic understanding of how to use NeuroSynth-Compose to conduct a meta-analysis. Specifcially, you will learn about:</p>
+<ol class="arabic simple">
+<li><p>Creating a project</p></li>
+<li><p>Searching for studies on pubmed</p></li>
+<li><p>Adding studies to a project</p></li>
+<li><p>Curating studies using PRISMA guidelines</p></li>
+<li><p>Extracting data from analyses within studies</p></li>
+<li><p>Specifying a meta-analysis</p></li>
+<li><p>Executing a meta-analysis</p></li>
+<li><p>Displaying meta-analytic images</p></li>
+<li><p>Interpreting meta-analytic results</p></li>
+<li><p>Considerations for follow-up analyses</p></li>
+</ol>
+<p>We will be following Dr. Annie Litical as she conducts a meta-analysis on the effects of nicotine administration on brain activity, but is in an enourmous rush to get it done before the end of the day.</p>
+<section id="story">
+<h2>Story<a class="headerlink" href="#story" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dear</span> <span class="n">Dr</span><span class="o">.</span> <span class="n">Litical</span><span class="p">,</span>
+
+<span class="n">We</span> <span class="n">hope</span> <span class="n">you</span> <span class="n">have</span> <span class="n">settled</span> <span class="ow">in</span> <span class="n">to</span> <span class="n">your</span> <span class="n">new</span> <span class="n">Post</span> <span class="n">Doctoral</span> <span class="n">position</span> <span class="n">at</span> <span class="n">the</span> <span class="n">University</span> <span class="n">of</span> <span class="n">NeuroSynth</span><span class="o">.</span>
+<span class="n">It</span> <span class="n">has</span> <span class="n">now</span> <span class="n">been</span> <span class="n">a</span> <span class="n">month</span> <span class="n">since</span> <span class="n">you</span> <span class="n">started</span> <span class="ow">and</span> <span class="n">we</span> <span class="n">are</span> <span class="n">excited</span> <span class="n">to</span> <span class="n">see</span> <span class="n">what</span> <span class="n">you</span> <span class="n">have</span> <span class="n">been</span> <span class="n">working</span> <span class="n">on</span><span class="o">.</span>
+<span class="n">We</span> <span class="n">would</span> <span class="n">like</span> <span class="n">you</span> <span class="n">to</span> <span class="n">send</span> <span class="n">us</span> <span class="n">a</span> <span class="n">report</span> <span class="n">of</span> <span class="n">your</span> <span class="n">progress</span> <span class="n">so</span> <span class="n">far</span> <span class="n">by</span> <span class="n">end</span> <span class="n">of</span> <span class="n">day</span> <span class="n">today</span><span class="o">.</span>
+
+<span class="n">Sincerely</span><span class="p">,</span>
+<span class="n">Your</span> <span class="n">Boss</span><span class="p">:</span> <span class="n">Dr</span><span class="o">.</span> <span class="n">I</span><span class="o">.</span> <span class="n">M</span><span class="o">.</span> <span class="n">Portant</span>
+
+</pre></div>
+</div>
+<p>“Oh no!, I haven’t done anything yet!” Dr. Litical exclaimed.
+“I knew binge watching <a class="reference external" href="https://www.youtube.com/watch?v=dop4MTlf_zc">Bee and Puppy Cat</a> repeatedly was a bad idea.”
+(And yet, she did not regret it.)
+She had to think of something fast.
+Dr. Litical scrambled to her computer and opened up the browser.
+She knew some of her colleagues had been using NeuroSynth-Compose to conduct meta-analyses, and thought she might be able to use it to get some results, and then she could add to her meta-analysis once she had more time.
+She navigated to <a class="reference external" href="https://compose.neurosynth.org">compose.neurosynth.org</a> and was immediately struck by the beautiful design.
+“Wow, this is so much better than the old NeuroSynth!” she thought.
+“Whoever designed this must be have put a lot of thought and care into the interface.”
+She clicked on the “Sign In” button and was greeted with a login screen.</p>
+<p><img alt="login" src="_images/login_screen.png" /></p>
+<p>She signed in with her Google account and was taken to the dashboard.
+The most prominant element of the dashboard was “Projects”.</p>
+<p><img alt="projects" src="_images/project_page.png" /></p>
+<p>“Perfect!” she thought, I need to create a project.
+She clicked on the “New Project” button and a popup appeared asking for a name
+and description of the project.
+“Bugger!”, Dr. Litical cursed under her breath, she had not decided on a topic for her meta-analysis.
+Quickly, she rummaged through her drawer of meta-analyses she had read recently,
+“Imitation is the sincerest form of flattery”, she mumbled to no one in particular as she leaved through
+the publications.
+One stuck out to her: <code class="docutils literal notranslate"><span class="pre">Neurobiological</span> <span class="pre">impact</span> <span class="pre">of</span> <span class="pre">nicotinic</span> <span class="pre">acetylcholine</span> <span class="pre">receptor</span> <span class="pre">agonists</span></code>.
+She had taken a neurobiology class in college and the class had a whole section on nicotinic acetylcholine
+receptors.
+Dr. Litical was back in business.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This tutorial is not a recommendation on how one should choose a topic for meta-analysis. One should give proper thought on what their meta-analysis is about, and have talked to their mentors and collaborators beforehand.</p>
+</div>
+<p><img alt="new project" src="_images/create_project.png" /></p>
+<p>She the following information for name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Replication</span> <span class="n">of</span><span class="p">:</span> <span class="n">Neurobiological</span> <span class="n">impact</span> <span class="n">of</span> <span class="n">nicotinic</span> <span class="n">acetylcholine</span> <span class="n">receptor</span> <span class="n">agonists</span>
+</pre></div>
+</div>
+<p>and description:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Nicotinic</span> <span class="n">acetylcholine</span> <span class="n">receptor</span> <span class="p">(</span><span class="n">nAChR</span><span class="p">)</span> <span class="n">agonists</span> <span class="n">augment</span> <span class="n">cognition</span> <span class="n">among</span> <span class="n">cigarette</span> <span class="n">smokers</span> <span class="ow">and</span> <span class="n">nonsmokers</span><span class="p">,</span> <span class="n">yet</span> <span class="n">the</span> <span class="n">systems</span><span class="o">-</span><span class="n">level</span> <span class="n">neurobiological</span> <span class="n">mechanisms</span> <span class="n">underlying</span> <span class="n">such</span> <span class="n">improvements</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">fully</span> <span class="n">understood</span><span class="o">.</span> <span class="n">Aggregating</span> <span class="n">neuroimaging</span> <span class="n">results</span> <span class="n">regarding</span> <span class="n">nAChR</span> <span class="n">agonists</span> <span class="n">provides</span> <span class="n">a</span> <span class="n">means</span> <span class="n">to</span> <span class="n">identify</span> <span class="n">common</span> <span class="n">functional</span> <span class="n">brain</span> <span class="n">changes</span> <span class="n">that</span> <span class="n">may</span> <span class="n">be</span> <span class="n">related</span> <span class="n">to</span> <span class="n">procognitive</span> <span class="n">drug</span> <span class="n">effects</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><img alt="new project view" src="_images/new_project_view.png" /></p>
+<p>After clicking “Create”, she was taken to her new project.
+Dr. Litical’s next step is to curate the studies she wants to include in her meta-analysis.</p>
+</section>
+<section id="searching-for-studies">
+<h2>Searching for studies<a class="headerlink" href="#searching-for-studies" title="Permalink to this heading">#</a></h2>
+<p>Dr. Litical clicked within the box “Curation: Get Started”, and was presented with
+three options: “PRISMA Workflow”, “Simple Workflow”, and “Custom Workflow”.</p>
+<p><img alt="select prisma" src="_images/select_prisma.png" /></p>
+<p>Since Dr. Litical is replicating a manually curated meta-analysis, she selcted the “PRISMA Workflow”.</p>
+<p><img alt="empty_curation_board" src="_images/empty_curation_board.png" /></p>
+<p>She was presented with an empty curation board, with 4 sections: “Identification”,
+“Screening”, “Eligibility”, and “Included”.</p>
+<p><img alt="pubmed_main_page" src="_images/pubmed_main_page.png" /></p>
+<p>Hopping over to Pubmed, Dr. Litical put the following in the advanced search box:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s2">&quot;fMRI&quot;</span> <span class="n">OR</span> <span class="s2">&quot;PET&quot;</span> <span class="n">OR</span> <span class="s2">&quot;neuroimaging&quot;</span> <span class="n">OR</span> <span class="s2">&quot;Functional magnetic resonance imaging&quot;</span> <span class="n">OR</span> <span class="s2">&quot;functional MRI&quot;</span><span class="p">)</span> <span class="n">AND</span> <span class="p">(</span><span class="s2">&quot;nicotine&quot;</span> <span class="n">OR</span> <span class="s2">&quot;cigarette&quot;</span> <span class="n">OR</span> <span class="s2">&quot;smok*&quot;</span> <span class="n">OR</span> <span class="s2">&quot;DMXB-A&quot;</span><span class="p">)</span> <span class="n">AND</span> <span class="p">(</span><span class="s2">&quot;2011/01/01&quot;</span><span class="p">[</span><span class="n">Date</span> <span class="o">-</span> <span class="n">Publication</span><span class="p">]</span> <span class="p">:</span> <span class="s2">&quot;2011/12/31&quot;</span><span class="p">[</span><span class="n">Date</span> <span class="o">-</span> <span class="n">Publication</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><img alt="advanced_search_query_pubmed" src="_images/advanced_search_query_pubmed.png" /></p>
+<p><img alt="search_results" src="_images/search_results.png" /></p>
+<p><img alt="download_search_results" src="_images/download_search_results.png" /></p>
+<p><img alt="pmid_file" src="_images/pmid_file.png" /></p>
+<p>We are only searching for studies in 2011 to keep the results shorter.
+140 results! Oh no, that will still take too much time.
+Luckily Dr. Litical remembered that she had previously narrowed down a list of pubmed ids.
+She found the file and continued to the next step.</p>
+<p><strong><a class="reference download internal" download="" href="_downloads/999b77d3c538fb47c28f0173991c3839/tutorial_pmids.txt"><span class="xref download myst">TUTORIAL PMID FILE</span></a></strong></p>
+<p><img alt="import studies" src="_images/import_studies.png" /></p>
+<p><img alt="select_search_source" src="_images/select_search_source.png" /></p>
+<p><img alt="upload_pmid_file" src="_images/upload_pmid_file.png" /></p>
+<p><img alt="display_imported_stubs" src="_images/display_imported_stubs.png" /></p>
+<p>Dr. Litical named the search
+“manually filtered nicotinic acetylcholine receptor agonists pubmed search” and clicked “Next”.
+There were no duplicates, so she clicked “Complete Import”.</p>
+</section>
+<section id="identification">
+<h2>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h2>
+<p><img alt="identification" src="_images/identification.png" /></p>
+<p><img alt="study_view_curation" src="_images/study_view_curation.png" />
+Dr. Litical was now presented with the list of studies that she had imported.
+While the import stage has handled any obvious
+duplicates, the Identification stage is where she will be able to identify any duplicates that were not caught automatically.
+Luckily, there were no duplicates, so each study was promoted to the next stage for screening.</p>
+</section>
+<section id="screening">
+<h2>Screening<a class="headerlink" href="#screening" title="Permalink to this heading">#</a></h2>
+<p>In this stage, Dr. Litical is attempting to determine if the study has any relevancy to her meta-analysis.
+For example, the study could be about cannibas
+or it could be about corectal cancer, which are topics Dr. Litical is not interested in.
+Now Dr. Litical takes a closer look at the title and abstract of each study and identifies whether each study has relevancy to her meta-analysis.</p>
+</section>
+<section id="eligibility">
+<h2>Eligibility<a class="headerlink" href="#eligibility" title="Permalink to this heading">#</a></h2>
+<p>With duplicates and relevancy resolved, Dr. Litical is now ready to determine if the study meets the eligibility criteria.
+In this stage Dr. Litical needs to read the methods
+section of each study and determine if it meets the eligibility criteria.
+Each paper may take several minutes to evaluate, so Dr. Litical will need to be patient and thorough.</p>
+<section id="eligibility-criteria">
+<h3>Eligibility criteria<a class="headerlink" href="#eligibility-criteria" title="Permalink to this heading">#</a></h3>
+<p>We included studies in this meta-analysis that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). Studies examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no study exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.</p>
+</section>
+</section>
+<section id="ingestion">
+<h2>Ingestion<a class="headerlink" href="#ingestion" title="Permalink to this heading">#</a></h2>
+<p>Horray, Dr. Litical has reached a critical milestone in her meta-analysis journey.
+Once the studies are ingested, Dr. Litical will be able to extract the data from each study.</p>
+<p>The ingestion process includes looking up the study on NeuroSynth-Compose’s database and asking
+Dr. Litical if she would want to use a pre-existing study or create a new one.
+If Dr. Litical chooses to use a pre-existing study, then she will inherit all the data that was already extracted from that study, which will often include coordinates and will save her a lot of time during the extraction phase.</p>
+</section>
+<section id="extraction">
+<h2>Extraction<a class="headerlink" href="#extraction" title="Permalink to this heading">#</a></h2>
+<p><img alt="extraction_and_annotation" src="_images/extraction_and_annotation.png" /></p>
+<p><img alt="annotate_and_extract_study" src="_images/annotate_and_extract_study.png" /></p>
+<p><img alt="annotation_view" src="_images/annotation_view.png" /></p>
+<p>Dr. Litical is on a roll.
+She has now reached the extraction phase.
+In this phase, Dr. Litical will extract the data from each study, which will often include
+coordinates and annotations.</p>
+<p>Within the context of a meta-analysis, Annotations can be explained as a way to categorize analyses within each study.
+For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the analyses.
+For this replication, Dr. Litical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an “activation” and “deactivation” column.
+By default you will have an “include” column to help get you started.</p>
+<p>In conjunction with annotating the analyses, Dr. Litical will also need to extract and/or edit the coordinates for each analysis.
+While NeuroSynth-Compose has many coordinates automatically extracted, Dr. Litical will need to extract the data from some of the analyses NeuroSynth-Compose has not seen before.
+Dr. Litical is estatic that almost half of the the studies already have coordinates extracted from the analyses.</p>
+<p><img alt="study_with_no_analyses" src="_images/study_with_no_analyses.png" /></p>
+<p>For the rest, NeuroSynth-Compose provides an interface to add/edit coordinates.
+Dr. Litical can either directly add the coordinates on the website or she can upload a csv file with extracted coordinates.</p>
+<p><img alt="add_coordinates" src="_images/add_coordinates.png" />
+She skillfully add the coordinates for the remaining studies and is now ready to move on to the next stage.</p>
+</section>
+<section id="meta-analysis-specification">
+<h2>Meta-analysis specification<a class="headerlink" href="#meta-analysis-specification" title="Permalink to this heading">#</a></h2>
+<p><img alt="proceed_meta_analysis" src="_images/proceed_meta_analysis.png" /></p>
+<p><img alt="create_meta_analysis" src="_images/create_meta_analysis.png" /></p>
+<p><img alt="name_meta_analysis" src="_images/name_meta_analysis.png" />
+Dr. Litical is now ready to select the analyses and specify the algorithm.
+She clicks on the “Meta-Analysis Specification” button and is presented with a wizard that will guide her through the process.
+She names this meta-analysis: “nicotinic agonist activations”.</p>
+<p>For this particular meta-analysis she chooses “activation” and goes through a wizard
+to specify the algorithmic parameters for her meta-analysis.</p>
+<p><img alt="select_column_activations" src="_images/select_column_activations.png" />
+Dr. Litical is now ready to specify the algorithmic parameters for her meta-analysis.
+She chooses ALE (Activation Likelihood Estimation) as the algorithm and selects
+8mm as the kernel size.
+<img alt="algorithm_overview" src="_images/algorithm_overview.png" /></p>
+<p><img alt="algorithm_parameters" src="_images/algorithm_parameters.png" /></p>
+<p><img alt="corrector_parameters" src="_images/corrector_parameters.png" /></p>
+<p><img alt="parameter_review" src="_images/parameter_review.png" />
+She selects the Family Wise Error rate corrector (FWE) and uses montecarlo simulation to estimate the null distribution.
+She chooses 10000 iterations and 0.05 as the p-value threshold.</p>
+</section>
+<section id="running-the-meta-analysis">
+<h2>Running the meta-analysis<a class="headerlink" href="#running-the-meta-analysis" title="Permalink to this heading">#</a></h2>
+<p>With the analyses selected and the algorithm chosen and specified, Dr. Litical is now ready to run the meta-analysis.
+She follows the google colab link and inserts the identifier that specifies the meta-analysis.
+she wants to run.</p>
+<p><img alt="colab_button" src="_images/colab_button.png" /></p>
+<p><img alt="notebook_code" src="_images/notebook_code.png" /></p>
+<p>She executes the analysis and waits for the results.
+She is running a relatively small meta-analysis so she does not have to wait long
+for the process to finish executing.</p>
+</section>
+<section id="interpreting-the-results">
+<h2>interpreting the results<a class="headerlink" href="#interpreting-the-results" title="Permalink to this heading">#</a></h2>
+<p>Dr. Litical can hardly contain her excitement, but yet she must remain calm and collected,
+otherwise she will not be able to interpret the results correctly.
+It is important to remember what inferences you can and cannot make from a meta-analysis.</p>
+<p>Looking at the top of the generated report Dr. Litical checks to see how many studies
+were included in the meta-analysis and checks to see if any studies were excluded.
+None were excluded so she can move on to check the mask, to ensure it is a whole brain mask.
+Seeing the mask covers the whole brain, she moves on to check the peak coordinates reported from
+all the analyses included in the meta-analysis.
+In this step, she can see which coordinates are outside the mask and if there is an unusual distribution
+of coordinates (e.g., they are all on the left side of the brain, or many appear to be white matter tracts).</p>
+<p>She confirms that the meta-analytic parameters she chose in the specification match what is inside the report.
+Then she can interactively view the results to see where the significant clusters are located.
+Remembering her training, Dr. Litical recalls the Activation Liklihood Estimation creates values that can be interpreted as the probability that a voxel is activated given the studies included in the meta-analysis.
+The z-values she is looking at represent the significance of that activation relative to a baseline of the voxel’s expected activation if all the foci were randomly distributed across the brain.
+And the z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.</p>
+<p>She finds some interesting clusters in the DMN region and ECN networks. These networks
+are considered task negative and task positive networks respectively.
+Since we did not differentiate between whether the coordinates included in the meta-analysis represented an increase or decrease in activation, Dr. Litical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that coordinates were reported in these regions.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="glossary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NeuroSynth Compose Glossary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_planning_and_preparation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening">Screening</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility-criteria">Eligibility criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ingestion">Ingestion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction">Extraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis-specification">Meta-analysis specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-meta-analysis">Running the meta-analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">interpreting the results</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Neurostuff Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
