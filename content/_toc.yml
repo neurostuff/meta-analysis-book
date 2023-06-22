@@ -11,6 +11,9 @@ parts:
     chapters:
     - file: sign_up
     - file: glossary
+  - caption: Tutorial
+    chapters:
+    - file: tutorials
   - caption: Manually curated meta-analysis walkthrough
     chapters:
     - file: 02_planning_and_preparation

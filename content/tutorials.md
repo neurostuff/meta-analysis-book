@@ -234,9 +234,38 @@ She chooses 10000 iterations and 0.05 as the p-value threshold.
 ## Running the meta-analysis
 
 With the analyses selected and the algorithm chosen and specified, Dr. Litical is now ready to run the meta-analysis.
-She follows the google colab link and inserts the code that specifies the meta-analysis
+She follows the google colab link and inserts the identifier that specifies the meta-analysis.
 she wants to run.
 
 ![colab_button](./figures/colab_button.png)
 
 ![notebook_code](./figures/notebook_code.png)
+
+She executes the analysis and waits for the results.
+She is running a relatively small meta-analysis so she does not have to wait long
+for the process to finish executing.
+
+## interpreting the results
+
+Dr. Litical can hardly contain her excitement, but yet she must remain calm and collected,
+otherwise she will not be able to interpret the results correctly.
+It is important to remember what inferences you can and cannot make from a meta-analysis.
+
+Looking at the top of the generated report Dr. Litical checks to see how many studies
+were included in the meta-analysis and checks to see if any studies were excluded.
+None were excluded so she can move on to check the mask, to ensure it is a whole brain mask.
+Seeing the mask covers the whole brain, she moves on to check the peak coordinates reported from
+all the analyses included in the meta-analysis.
+In this step, she can see which coordinates are outside the mask and if there is an unusual distribution
+of coordinates (e.g., they are all on the left side of the brain, or many appear to be white matter tracts).
+
+She confirms that the meta-analytic parameters she chose in the specification match what is inside the report.
+Then she can interactively view the results to see where the significant clusters are located.
+Remembering her training, Dr. Litical recalls the Activation Liklihood Estimation creates values that can be interpreted as the probability that a voxel is activated given the studies included in the meta-analysis.
+The z-values she is looking at represent the significance of that activation relative to a baseline of the voxel's expected activation if all the foci were randomly distributed across the brain.
+And the z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.
+
+She finds some interesting clusters in the DMN region and ECN networks. These networks
+are considered task negative and task positive networks respectively.
+Since we did not differentiate between whether the coordinates included in the meta-analysis represented an increase or decrease in activation, Dr. Litical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that coordinates were reported in these regions.
+
