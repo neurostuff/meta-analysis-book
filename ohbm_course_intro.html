@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Execution &#8212; An Introduction to Neuroimaging Meta-Analysis</title>
+    <title>&lt;no title&gt; &#8212; An Introduction to Neuroimaging Meta-Analysis</title>
   
   
   
@@ -61,11 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '06_execution';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ohbm_course_intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="interpretation of results" href="07_interpretation.html" />
-    <link rel="prev" title="Methods to choose from" href="05_specification.html" />
+    <link rel="next" title="Neurosynth-Compose account" href="sign_up.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="00_intro.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -144,44 +143,20 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="00_intro.html">
-                    Neuroimaging Meta-Analyses in Python
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    <no title>
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sign_up.html">Neurosynth-Compose account</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">NeuroSynth Compose Glossary</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023 OHBM Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorial</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manually curated meta-analysis walkthrough</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="02_planning_and_preparation.html">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_curation.html">Curation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_extraction.html">Data extraction/collection from studies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_specification.html">Methods to choose from</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Execution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_interpretation.html">interpretation of results</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep dives</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="resources.html">External Meta-Analytic Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html">OHBM 2021 NiMARE tutorial</a></li>
-
-
-
-
-
-
 </ul>
 
     </div>
@@ -236,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/06_execution.md" target="_blank"
+      <li><a href="_sources/ohbm_course_intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +280,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -316,11 +293,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Execution</h1>
+    <h1><no title></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -330,12 +315,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="execution">
-<h1>Execution<a class="headerlink" href="#execution" title="Permalink to this heading">#</a></h1>
-<p>Execution of the meta-analysis is designed to be as simple as possible,
-if the meta-analysis is small enough it can be run within google collab.
-If the meta-analysis is too large to run in google collab, it can be run on a local machine or on a cloud computing service.</p>
-</section>
+  <p>Welcome to the 2023 Reproducible Meta-Analysis Course!</p>
+<p>This course is designed to teach you how to run a meta-analysis in a reproducible way.
+After this course you will be able to:</p>
+<ul class="simple">
+<li><p>Define what a neuroimaging meta-analysis is</p></li>
+<li><p>Know the landscape of neuroimaging meta-analysis methods</p></li>
+<li><p>Identify the strengths and weakness of different meta-analysis methods</p></li>
+<li><p>Choose a meta-analysis method that is appropriate for your research question and available data</p></li>
+<li><p>Run a meta-analysis using a reproducible workflow and tools on Neurosynth-Compose</p></li>
+<li><p>Interpret the results of your meta-analysis</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -368,21 +362,12 @@ If the meta-analysis is too large to run in google collab, it can be run on a lo
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="05_specification.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Methods to choose from</p>
-      </div>
-    </a>
     <a class="right-next"
-       href="07_interpretation.html"
+       href="sign_up.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">interpretation of results</p>
+        <p class="prev-next-title">Neurosynth-Compose account</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -395,6 +380,20 @@ If the meta-analysis is too large to run in google collab, it can be run on a lo
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

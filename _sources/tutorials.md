@@ -3,27 +3,27 @@
 For this tutorial we are using a slimmed down replication of 
 [Neurobiological impact of nicotinic acetylcholine receptor agonists: An ALE meta-analysis of pharmacological neuroimaging studies](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4494985/).
 
-After this tutorial, you will gain a basic understanding of how to use NeuroSynth-Compose to conduct a meta-analysis. Specifcially, you will learn about:
+After this tutorial, you will gain a basic understanding of how to use NeuroSynth-Compose to conduct a meta-analysis. Specifically, you will learn about:
 
-1. Creating a project
-2. Searching for studies on pubmed
-3. Adding studies to a project
-4. Curating studies using PRISMA guidelines
-5. Extracting data from analyses within studies
-6. Specifying a meta-analysis
-7. Executing a meta-analysis
+1. Creating a {term}`Project` on neurosynth-compose.
+2. Searching for {term}`studies <study>` on pubmed.
+3. Adding studies to a {term}`project`.
+4. Curating studies using [PRISMA](http://prisma-statement.org/) guidelines
+5. Extracting and {term}`Annotating <annotation>` analyses within studies
+6. Specifying a {term}`meta-analysis`
+7. Executing a {term}`meta-analysis`
 8. Displaying meta-analytic images
 9. Interpreting meta-analytic results
 10. Considerations for follow-up analyses
 
-We will be following Dr. Annie Litical as she conducts a meta-analysis on the effects of nicotine administration on brain activity, but is in an enourmous rush to get it done before the end of the day.
+We will be following Dr. Annie Litical as she conducts a meta-analysis on the effects of nicotine administration on brain activity, but is in an enormous rush to get it done before the end of the day.
 
 ## Story
 
 ```
 Dear Dr. Litical,
 
-We hope you have settled in to your new Post Doctoral position at the University of NeuroSynth.
+We hope you have settled in to your new Post Doctoral position at the University of NeuroSyncratic.
 It has now been a month since you started and we are excited to see what you have been working on.
 We would like you to send us a report of your progress so far by end of day today.
 
@@ -37,36 +37,52 @@ Your Boss: Dr. I. M. Portant
 (And yet, she did not regret it.)
 She had to think of something fast.
 Dr. Litical scrambled to her computer and opened up the browser.
-She knew some of her colleagues had been using NeuroSynth-Compose to conduct meta-analyses, and thought she might be able to use it to get some results, and then she could add to her meta-analysis once she had more time.
+She knew some of her colleagues had been using Neurosynth-Compose to conduct {term}`meta-analyses <meta-analysis>`, and thought she might be able to use it to get some results, and then she could add to her {term}`meta-analysis` once she had more time.
 She navigated to [compose.neurosynth.org](https://compose.neurosynth.org) and was immediately struck by the beautiful design.
-"Wow, this is so much better than the old NeuroSynth!" she thought.
-"Whoever designed this must be have put a lot of thought and care into the interface."
 She clicked on the "Sign In" button and was greeted with a login screen.
 
-![login](./figures/login_screen.png)
+```{figure} ./figures/login_screen.png
+---
+height: 550px
+name: login
+---
+Neurosynth-Compose login screen
+```
 
 She signed in with her Google account and was taken to the dashboard.
-The most prominant element of the dashboard was "Projects".
+The most prominent element of the dashboard was {term}`Projects <Project>`.
 
-![projects](./figures/project_page.png)
+```{figure} ./figures/project_page.png
+---
+width: 900px
+name: projects
+---
+Neurosynth-Compose projects page
+```
 
-"Perfect!" she thought, I need to create a project.
+"Perfect!" she thought, I need to create a {term}`project`.
 She clicked on the "New Project" button and a popup appeared asking for a name
-and description of the project.
-"Bugger!", Dr. Litical cursed under her breath, she had not decided on a topic for her meta-analysis.
+and description of the {term}`project`.
+"Bugger!", Dr. Litical cursed under her breath, she had not decided on a topic for her {term}`meta-analysis`.
 Quickly, she rummaged through her drawer of meta-analyses she had read recently,
 "Imitation is the sincerest form of flattery", she mumbled to no one in particular as she leaved through
 the publications.
-One stuck out to her: `Neurobiological impact of nicotinic acetylcholine receptor agonists`.
+One stuck out to her: [`Neurobiological impact of nicotinic acetylcholine receptor agonists`](https://pubmed.ncbi.nlm.nih.gov/25662104/).
 She had taken a neurobiology class in college and the class had a whole section on nicotinic acetylcholine
 receptors.
-Dr. Litical was back in business.
+Dr. Litical was in business.
 
 :::{important}
-This tutorial is not a recommendation on how one should choose a topic for meta-analysis. One should give proper thought on what their meta-analysis is about, and have talked to their mentors and collaborators beforehand.
+This tutorial is not a recommendation on how one should choose a topic for meta-analysis. One should give proper thought on the topic of their meta-analysis, and have talked to their mentors and collaborators beforehand. Please see the [PRISMA statement](https://www.bmj.com/content/372/bmj.n71) and the [10 simple rules for neuroimaging meta-analyses](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918306/).
+Consider registering your meta-analysis protocol on [PROSPERO](https://www.crd.york.ac.uk/prospero/).
 :::
 
-![new project](./figures/create_project.png)
+```{figure} ./figures/create_project.png
+---
+name: new project
+---
+Creating a new project
+```
 
 She the following information for name:
 ```
@@ -78,40 +94,112 @@ and description:
 Nicotinic acetylcholine receptor (nAChR) agonists augment cognition among cigarette smokers and nonsmokers, yet the systems-level neurobiological mechanisms underlying such improvements are not fully understood. Aggregating neuroimaging results regarding nAChR agonists provides a means to identify common functional brain changes that may be related to procognitive drug effects.
 ```
 
-![new project view](./figures/new_project_view.png)
+After inserting the name and description, she clicked "Create"
+and was redirected to the following page
 
-After clicking "Create", she was taken to her new project.
-Dr. Litical's next step is to curate the studies she wants to include in her meta-analysis.
+```{figure} ./figures/new_project_view.png
+---
+name: new project view
+---
+View of the new project.
+```
 
+Dr. Litical's next step is to search and curate the studies she wants to include in her meta-analysis.
 
 ## Searching for studies
 
 Dr. Litical clicked within the box "Curation: Get Started", and was presented with
 three options: "PRISMA Workflow", "Simple Workflow", and "Custom Workflow".
 
-![select prisma](./figures/select_prisma.png)
+```{figure} ./figures/select_prisma.png
+---
+name: select prisma
+---
+Selecting the PRISMA workflow
+```
 
-Since Dr. Litical is replicating a manually curated meta-analysis, she selcted the "PRISMA Workflow".
+Since Dr. Litical is replicating a manually curated meta-analysis, she selected the "PRISMA Workflow". [PRISMA](http://prisma-statement.org/), or Preferred Reporting Items for Systematic Reviews and Meta-Analyses, is a set of guidelines for conducting systematic reviews and meta-analyses.
+While PRISMA encompasses the entire project workflow, Dr. Litical has the most agency
+on how strictly she will abide to the guidelines during the curation process.
 
-![empty_curation_board](./figures/empty_curation_board.png)
+```{figure} ./figures/empty_curation_board.png
+---
+name: empty curation board
+---
+View of the empty curation board.
+```
 
 She was presented with an empty curation board, with 4 sections: "Identification",
 "Screening", "Eligibility", and "Included".
+````{card}
+{bdg-primary}`Identification`
 
-![pubmed_main_page](./figures/pubmed_main_page.png)
+Remove duplicate studies
+````
 
+````{card}
+{bdg-primary}`Screening`
+
+Remove irrelevant studies
+````
+
+````{card}
+{bdg-primary}`Eligibility`
+
+Remove studies that do not meet inclusion criteria
+or do not have retrievable information
+````
+
+
+Dr. Litical decided to use Pubmed to search for studies for this meta-analysis.
+
+```{figure} ./figures/pubmed_main_page.png
+---
+name: pubmed main page
+---
+Pubmed landing page
+```
 
 Hopping over to Pubmed, Dr. Litical put the following in the advanced search box:
+
 ```
 ("fMRI" OR "PET" OR "neuroimaging" OR "Functional magnetic resonance imaging" OR "functional MRI") AND ("nicotine" OR "cigarette" OR "smok*" OR "DMXB-A") AND ("2011/01/01"[Date - Publication] : "2011/12/31"[Date - Publication])
 ```
-![advanced_search_query_pubmed](./figures/advanced_search_query_pubmed.png)
 
-![search_results](./figures/search_results.png)
+Below is what her search looked like.
 
-![download_search_results](./figures/download_search_results.png)
+```{figure} ./figures/advanced_search_query_pubmed.png
+---
+name: advanced search for pubmed
+---
+Pubmed Advanced Search
+```
 
-![pmid_file](./figures/pmid_file.png)
+She got the following results from her search.
+
+```{figure} ./figures/search_results.png
+---
+name: search results for pubmed
+---
+Pubmed search results
+```
+
+With the results in hand, she downloaded the results as a CSV file.
+
+```{figure} ./figures/download_search_results.png
+---
+name: download search results
+---
+Download search results
+```
+
+
+```{figure} ./figures/pmid_file.png
+---
+name: example pmid file
+---
+Example pmid file
+```
 
 We are only searching for studies in 2011 to keep the results shorter.
 140 results! Oh no, that will still take too much time.
@@ -120,13 +208,33 @@ She found the file and continued to the next step.
 
 **[TUTORIAL PMID FILE](./data/tutorial_pmids.txt)**
 
-![import studies](./figures/import_studies.png)
+```{figure} ./figures/import_studies.png
+---
+name: import studies
+---
+Import studies into neurostore
+```
 
-![select_search_source](./figures/select_search_source.png)
+```{figure} ./figures/select_search_source.png
+---
+name: select search source
+---
+Select search source
+```
 
-![upload_pmid_file](./figures/upload_pmid_file.png)
+```{figure} ./figures/upload_pmid_file.png
+---
+name: upload pmid file
+---
+Upload the tutorial pmid file
+```
 
-![display_imported_stubs](./figures/display_imported_stubs.png)
+```{figure} ./figures/display_imported_stubs.png
+---
+name: display imported studies
+---
+Display imported studies
+```
 
 Dr. Litical named the search
 "manually filtered nicotinic acetylcholine receptor agonists pubmed search" and clicked "Next".
@@ -134,9 +242,22 @@ There were no duplicates, so she clicked "Complete Import".
 
 ## Identification
 
-![identification](./figures/identification.png)
+
+```{figure} ./figures/identification.png
+---
+name: identification
+---
+Identification stage of curation
+```
 
 ![study_view_curation](./figures/study_view_curation.png)
+```{figure} ./figures/study_view_curation.png
+---
+name: study view in identification stage
+---
+Study view in identification stage
+```
+
 Dr. Litical was now presented with the list of studies that she had imported.
 While the import stage has handled any obvious
 duplicates, the Identification stage is where she will be able to identify any duplicates that were not caught automatically.
@@ -145,8 +266,8 @@ Luckily, there were no duplicates, so each study was promoted to the next stage 
 ## Screening
 
 In this stage, Dr. Litical is attempting to determine if the study has any relevancy to her meta-analysis.
-For example, the study could be about cannibas
-or it could be about corectal cancer, which are topics Dr. Litical is not interested in.
+For example, the study could be about cannabis
+or it could be about colorectal cancer, which are topics Dr. Litical is not interested in.
 Now Dr. Litical takes a closer look at the title and abstract of each study and identifies whether each study has relevancy to her meta-analysis.
 
 ## Eligibility
@@ -164,7 +285,7 @@ We included studies in this meta-analysis that: 1) employed fMRI or PET; 2) repo
 
 ## Ingestion
 
-Horray, Dr. Litical has reached a critical milestone in her meta-analysis journey.
+Hooray, Dr. Litical has reached a critical milestone in her meta-analysis journey.
 Once the studies are ingested, Dr. Litical will be able to extract the data from each study.
 
 The ingestion process includes looking up the study on NeuroSynth-Compose's database and asking
@@ -173,11 +294,26 @@ If Dr. Litical chooses to use a pre-existing study, then she will inherit all th
 
 ## Extraction
 
-![extraction_and_annotation](./figures/extraction_and_annotation.png)
+```{figure} ./figures/extraction_and_annotation.png
+---
+name: extraction and annotation
+---
+Extraction and annotation stage
+```
 
-![annotate_and_extract_study](./figures/annotate_and_extract_study.png)
+```{figure} ./figures/annotate_and_extract_study.png
+---
+name: annotate and extract study
+---
+Annotate and extract study
+```
 
-![annotation_view](./figures/annotation_view.png)
+```{figure} ./figures/annotation_view.png
+---
+name: annotation view
+---
+Annotation view
+```
 
 
 Dr. Litical is on a roll.
@@ -192,24 +328,52 @@ By default you will have an "include" column to help get you started.
 
 In conjunction with annotating the analyses, Dr. Litical will also need to extract and/or edit the coordinates for each analysis.
 While NeuroSynth-Compose has many coordinates automatically extracted, Dr. Litical will need to extract the data from some of the analyses NeuroSynth-Compose has not seen before.
-Dr. Litical is estatic that almost half of the the studies already have coordinates extracted from the analyses.
+Dr. Litical is ecstatic that almost half of the the studies already have coordinates extracted from the analyses.
 
-![study_with_no_analyses](./figures/study_with_no_analyses.png)
+```{figure} ./figures/study_with_no_analyses.png
+---
+name: study with no analyses
+---
+Study with no analyses
+```
 
 For the rest, NeuroSynth-Compose provides an interface to add/edit coordinates.
 Dr. Litical can either directly add the coordinates on the website or she can upload a csv file with extracted coordinates.
 
 ![add_coordinates](./figures/add_coordinates.png)
+```{figure} ./figures/add_coordinates.png
+---
+name: add coordinates
+---
+Add coordinates
+```
+
 She skillfully add the coordinates for the remaining studies and is now ready to move on to the next stage.
 
 
 ## Meta-analysis specification
 
-![proceed_meta_analysis](./figures/proceed_meta_analysis.png)
+```{figure} ./figures/proceed_meta_analysis.png
+---
+name: proceed meta-analysis
+---
+The meta-analysis stage.
+```
 
-![create_meta_analysis](./figures/create_meta_analysis.png)
+```{figure} ./figures/create_meta_analysis.png
+---
+name: create meta-analysis
+---
+Create meta-analysis
+```
 
-![name_meta_analysis](./figures/name_meta_analysis.png)
+```{figure} ./figures/name_meta_analysis.png
+---
+name: name meta-analysis
+---
+Name the meta-analysis
+```
+
 Dr. Litical is now ready to select the analyses and specify the algorithm.
 She clicks on the "Meta-Analysis Specification" button and is presented with a wizard that will guide her through the process.
 She names this meta-analysis: "nicotinic agonist activations".
@@ -217,17 +381,45 @@ She names this meta-analysis: "nicotinic agonist activations".
 For this particular meta-analysis she chooses "activation" and goes through a wizard
 to specify the algorithmic parameters for her meta-analysis.
 
-![select_column_activations](./figures/select_column_activations.png)
+```{figure} ./figures/select_column_activations.png
+---
+name: select column activations
+---
+Select column activations
+```
+
 Dr. Litical is now ready to specify the algorithmic parameters for her meta-analysis.
 She chooses ALE (Activation Likelihood Estimation) as the algorithm and selects
 8mm as the kernel size.
-![algorithm_overview](./figures/algorithm_overview.png)
 
-![algorithm_parameters](./figures/algorithm_parameters.png)
+```{figure} ./figures/algorithm_overview.png
+---
+name: algorithm overview
+---
+Algorithm overview
+```
 
-![corrector_parameters](./figures/corrector_parameters.png)
+```{figure} ./figures/algorithm_parameters.png
+---
+name: algorithm parameters
+---
+Algorithm parameters
+```
 
-![parameter_review](./figures/parameter_review.png)
+```{figure} ./figures/corrector_parameters.png
+---
+name: corrector parameters
+---
+Corrector parameters
+```
+
+```{figure} ./figures/parameter_review.png
+---
+name: parameter review
+---
+Parameter review
+```
+
 She selects the Family Wise Error rate corrector (FWE) and uses montecarlo simulation to estimate the null distribution.
 She chooses 10000 iterations and 0.05 as the p-value threshold.
 
@@ -237,9 +429,20 @@ With the analyses selected and the algorithm chosen and specified, Dr. Litical i
 She follows the google colab link and inserts the identifier that specifies the meta-analysis.
 she wants to run.
 
-![colab_button](./figures/colab_button.png)
 
-![notebook_code](./figures/notebook_code.png)
+```{figure} ./figures/colab_button.png
+---
+name: colab button
+---
+Colab button
+```
+
+```{figure} ./figures/notebook_code.png
+---
+name: notebook code
+---
+Notebook code
+```
 
 She executes the analysis and waits for the results.
 She is running a relatively small meta-analysis so she does not have to wait long
@@ -261,7 +464,7 @@ of coordinates (e.g., they are all on the left side of the brain, or many appear
 
 She confirms that the meta-analytic parameters she chose in the specification match what is inside the report.
 Then she can interactively view the results to see where the significant clusters are located.
-Remembering her training, Dr. Litical recalls the Activation Liklihood Estimation creates values that can be interpreted as the probability that a voxel is activated given the studies included in the meta-analysis.
+Remembering her training, Dr. Litical recalls the Activation Likelihood Estimation creates values that can be interpreted as the probability that a voxel is activated given the studies included in the meta-analysis.
 The z-values she is looking at represent the significance of that activation relative to a baseline of the voxel's expected activation if all the foci were randomly distributed across the brain.
 And the z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.
 

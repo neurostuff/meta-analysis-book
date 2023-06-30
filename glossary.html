@@ -131,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="00_intro.html">
+<a class="navbar-brand logo" href="ohbm_course_intro.html">
   
   
   
@@ -145,43 +145,19 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="00_intro.html">
-                    Neuroimaging Meta-Analyses in Python
+                <a class="reference internal" href="ohbm_course_intro.html">
+                    <no title>
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Overview</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01_overview.html">Overview</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sign_up.html">Neurosynth-Compose account</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">NeuroSynth Compose Glossary</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorial</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2023 OHBM Tutorial</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorial</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Manually curated meta-analysis walkthrough</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="02_planning_and_preparation.html">PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03_curation.html">Curation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04_extraction.html">Data extraction/collection from studies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05_specification.html">Methods to choose from</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06_execution.html">Execution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_interpretation.html">interpretation of results</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep dives</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="resources.html">External Meta-Analytic Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nimare/intro-to-nimare.html">OHBM 2021 NiMARE tutorial</a></li>
-
-
-
-
-
-
 </ul>
 
     </div>
@@ -305,9 +281,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -323,18 +297,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis">Meta-Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studyset">StudySet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study">Study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -346,36 +308,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="neurosynth-compose-glossary">
 <h1>NeuroSynth Compose Glossary<a class="headerlink" href="#neurosynth-compose-glossary" title="Permalink to this heading">#</a></h1>
-<section id="project">
-<h2>Project<a class="headerlink" href="#project" title="Permalink to this heading">#</a></h2>
-<p>A project is analogous to neuroimaging meta-analysis paper. A project contains the curation of the studies, the specifications of the meta-analyses, as well as the results of the meta-analyses.
+<dl class="simple glossary">
+<dt id="term-Project">Project<a class="headerlink" href="#term-Project" title="Permalink to this term">#</a></dt><dd><p>A project is intended to be the basis of a neuroimaging meta-analysis paper. A project contains the curation of the studies, the specifications of the meta-analyses, as well as the results of the meta-analyses.
 An individual should be able to publish a paper based on a project.</p>
-</section>
-<section id="meta-analysis">
-<h2>Meta-Analysis<a class="headerlink" href="#meta-analysis" title="Permalink to this heading">#</a></h2>
-<p>A meta-analysis is comprised of three parts:</p>
+</dd>
+<dt id="term-Meta-Analysis">Meta-Analysis<a class="headerlink" href="#term-Meta-Analysis" title="Permalink to this term">#</a></dt><dd><p>A meta-analysis is comprised of three parts:</p>
 <ol class="arabic simple">
 <li><p>A collection of analyses from multiple studies that are combined to produce results.</p></li>
 <li><p>A specification of method(s) used to combine the analyses.</p></li>
 <li><p>The statistical results after running the method(s) on the analyses.</p></li>
 </ol>
-</section>
-<section id="studyset">
-<h2>StudySet<a class="headerlink" href="#studyset" title="Permalink to this heading">#</a></h2>
-<p>A StudySet is a collection of studies. You can create a StudySet by uploading studies or by searching for studies in the NeuroSynth-Compose platform.</p>
-</section>
-<section id="study">
-<h2>Study<a class="headerlink" href="#study" title="Permalink to this heading">#</a></h2>
-<p>A study is a single neuroimaging study. A study could be published in a journal, a preprint, or a conference proceeding, or not be published at all.
+</dd>
+<dt id="term-Studyset">Studyset<a class="headerlink" href="#term-Studyset" title="Permalink to this term">#</a></dt><dd><p>A Studyset is a collection of studies. You can create a Studyset by uploading studies or by searching for studies in the Neurosynth-Compose platform.</p>
+</dd>
+<dt id="term-Study">Study<a class="headerlink" href="#term-Study" title="Permalink to this term">#</a></dt><dd><p>A study is a single neuroimaging study. A study could be published in a journal, a preprint, or a conference proceeding, or not be published at all.
 A study is composed of one or more Analyses.</p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
-<p>An analysis is a single neuroimaging analysis within a study.
+</dd>
+<dt id="term-Analysis">Analysis<a class="headerlink" href="#term-Analysis" title="Permalink to this term">#</a></dt><dd><p>An analysis is a single neuroimaging analysis within a study.
 An analysis contains a contrast of conditions and associated results in the form of coordinates and/or statistical maps.
 Analyses are the unit of analysis in NeuroSynth-Compose.
-Many meta-analyses only include one analysis from each study, but it is possible to include multiple analyses from a single study, so the selection of what to include in the meta-analysis is decided at the analysis level.</p>
-</section>
+Many meta-analyses only include one analysis from each study, but it is possible to include multiple analyses from a single study, necessitating the selection of what to include in the meta-analysis at the analysis level and not the study level.</p>
+</dd>
+<dt id="term-Annotation">Annotation<a class="headerlink" href="#term-Annotation" title="Permalink to this term">#</a></dt><dd><p>An annotation refers to the collection of labels that are associated with analyses.</p>
+</dd>
+<dt id="term-Note">Note<a class="headerlink" href="#term-Note" title="Permalink to this term">#</a></dt><dd><p>the labels that are associated with a specific analysis.</p>
+</dd>
+</dl>
 </section>
 
     <script type="text/x-thebe-config">
@@ -436,24 +394,6 @@ Many meta-analyses only include one analysis from each study, but it is possible
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project">Project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis">Meta-Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studyset">StudySet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#study">Study</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
