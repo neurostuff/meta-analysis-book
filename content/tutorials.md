@@ -413,7 +413,10 @@ She skillfully add the coordinates for the remaining {term}`studies <study>` and
 
 ## Meta-analysis specification
 
-The {term}`meta-analysis` specification
+The {term}`meta-analysis` specification is the stage where many may
+scratch their heads and look with confusion.
+But not Dr. Anna Lytical, she came armed with the knowledge of
+learning about the different algorithms and their nuances.
 
 ```{figure} ./figures/proceed_meta_analysis.png
 ---
@@ -482,8 +485,8 @@ name: parameter review
 Parameter review
 ```
 
-She selects the Family Wise Error rate corrector (FWE) and uses montecarlo simulation to estimate the null distribution.
-She chooses 10000 iterations and 0.05 as the p-value threshold.
+She selects the False Discovery Rate corrector (FDR) and selects "independent",
+and 0.05 as the p-value threshold.
 
 ## Running the meta-analysis
 
@@ -530,10 +533,29 @@ Remembering her training, Dr. Lytical recalls the Activation Likelihood Estimati
 The z-values she is looking at represent the significance of that activation relative to a baseline of the voxel's expected activation if all the foci were randomly distributed across the brain.
 And the z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.
 
-She finds some interesting clusters in the DMN region and ECN networks. These networks
+She identifies clusters in the Default Mode Network (DMN) and Executive Cognition Network (ECN). These networks
 are considered task negative and task positive networks respectively.
 Since we did not differentiate between whether the coordinates included in the {term}`meta-analysis` represented an increase or decrease in activation, Dr. Lytical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that {term}`studies <study>` tended to report significant coordinates within these regions.
 As a follow up analysis, Dr. Anna Lytical could label the {term}`analyses <analysis>` as either "activation" or "deactivation" and run a separate {term}`meta-analysis` for each category.
 
 ## Conclusion
 
+Congratulations! You've ran your first meta-analysis and helped Dr. Lytical
+keep her job.
+
+You've accomplished a lot in this tutorial:
+1. Created a {term}`Project` on Neurosynth Compose.
+2. Searched for {term}`studies <study>` about nicotine on pubmed.
+3. Added {term}`studies <study>` to a {term}`project` by importing them.
+4. Curated {term}`studies <study>` using [PRISMA](http://prisma-statement.org/) guidelines within the four sections: Identification, Screening, Eligibility, and Inclusion.
+5. Extracted and {term}`Annotated <annotation>` {term}`analyses <analysis>` within studies
+6. Specified an ALE {term}`meta-analysis`.
+7. Executed a {term}`meta-analysis` using google colab.
+8. Displayed meta-analytic statistical images.
+9. Interpreted meta-analytic results to validate and understand the meta-analysis.
+10. Considerations for follow-up analyses to split up the analyses in different ways.
+
+
+Dr. Lytical is planning on jumping right back in to create another Project
+with her own ideas, maybe something about naturalistic data while watching Bee and
+PuppyCat, she would gladly volunteer for that study...
