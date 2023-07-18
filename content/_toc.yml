@@ -7,13 +7,13 @@ parts:
   # - caption: Course Overview
   #   chapters:
   #   - file: 01_overview
-  - caption: Getting Started
-    chapters:
-    - file: sign_up
-    - file: glossary
   - caption: 2023 OHBM Tutorial
     chapters:
     - file: tutorials
+  - caption: Resources
+    chapters:
+    - file: sign_up
+    - file: glossary
   # - caption: Manually curated meta-analysis walkthrough
   #   chapters:
   #   - file: 02_planning_and_preparation

@@ -1,6 +1,8 @@
+# Best Practices for Robust and Reproducible Neuroimaging Meta-Analysis
+
 Welcome to the 2023 Reproducible Meta-Analysis Course!
 
-This course is designed to teach you how to run a meta-analysis in a reproducible way.
+This course is designed to teach you how to run a meta-analysis in a robust and reproducible way.
 
 ## Course goals
 
