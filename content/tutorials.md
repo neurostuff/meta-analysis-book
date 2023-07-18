@@ -24,7 +24,7 @@ We will be following Dr. Annie Lytical as she conducts a meta-analysis on the ef
 
 ## Story
 
-```
+```{epigraph}
 Dear Dr. Lytical,
 
 We hope you have settled in to your new Post Doctoral position at the University of NeuroSyncratic.
@@ -32,6 +32,7 @@ It has now been a month since you started and we are excited to see what you hav
 We would like you to send us a report of your progress so far by end of day today.
 
 Sincerely,
+
 Your Boss: Dr. I. M. Portant
 
 ```
@@ -49,6 +50,7 @@ She clicked on the "Sign In" button and was greeted with a login screen.
 ---
 height: 550px
 name: login
+align: center
 ---
 Neurosynth Compose login screen
 ```
@@ -88,7 +90,7 @@ name: new project
 Creating a new project
 ```
 
-She the following information for name:
+She typed the following information for name:
 ```
 Replication of: Neurobiological impact of nicotinic acetylcholine receptor agonists
 ```
@@ -154,6 +156,11 @@ Remove studies that do not meet inclusion criteria
 or do not have retrievable information
 ````
 
+````{card}
+{bdg-primary}`Inclusion`
+
+Double check the studies and view which studies will be included in the meta-analysis
+````
 
 Dr. Lytical decided to use Pubmed to search for studies for this meta-analysis.
 
@@ -164,7 +171,8 @@ name: pubmed main page
 Pubmed landing page
 ```
 
-Hopping over to Pubmed, Dr. Lytical put the following in the advanced search box:
+Hopping over to Pubmed, Dr. Lytical clicked on the advanced text below the main search box,
+and put the following text in the advanced search box:
 
 ```
 ("fMRI" OR "PET" OR "neuroimaging" OR "Functional magnetic resonance imaging" OR "functional MRI") AND ("nicotine" OR "cigarette" OR "smok*" OR "DMXB-A") AND ("2011/01/01"[Date - Publication] : "2011/12/31"[Date - Publication])
@@ -176,7 +184,7 @@ Below is what her search looked like.
 ---
 name: advanced search for pubmed
 ---
-Pubmed Advanced Search
+Pubmed advanced search
 ```
 
 She got the following results from her search.
@@ -188,7 +196,9 @@ name: search results for pubmed
 Pubmed search results
 ```
 
-With the results in hand, she downloaded the results as a CSV file.
+She downloaded the results as a PMID file, by clicking on the save button.
+She changed the selection to be "All Results", and selecting the PMID format.
+This will download a text file with a PMID on each row.
 
 ```{figure} ./figures/download_search_results.png
 ---
@@ -208,11 +218,14 @@ Example pmid file
 We are only searching for studies in 2011 to keep the results shorter.
 140 results! Oh no, that will still take too much time.
 Luckily Dr. Lytical remembered that she had previously narrowed down a list of pubmed ids.
-She found the file and continued to the next step.
+She found the file (linked below) and continued to the next step.
 
 :::{important}
 **[TUTORIAL PMID FILE](./data/tutorial_pmids.txt)**
 :::
+
+With the pmid file in hand, Dr. Lytical went back to neurostore and clicked on the "Import Studies" button
+on the top right of the curation board page.
 
 ```{figure} ./figures/import_studies.png
 ---
@@ -221,6 +234,11 @@ name: import studies
 Import studies into neurostore
 ```
 
+When importing studies, Dr. Lytical needs to select a search source, which could be from
+the Neurosynth Compose database, Pubmed, a citation manager, or a manually inserted study.
+Since she searched on PubMed, she selected "Import Via Pubmed ID List".
+
+
 ```{figure} ./figures/select_search_source.png
 ---
 name: select search source
@@ -228,12 +246,18 @@ name: select search source
 Select search source
 ```
 
+Dr. Lytical uploaded the pmid file that she had downloaded from Pubmed.
+She could also copy and paste the pmids into the text box.
+
 ```{figure} ./figures/upload_pmid_file.png
 ---
 name: upload pmid file
 ---
 Upload the tutorial pmid file
 ```
+
+She can now view all the studies she imported as a quick visual confirmation
+the studies look correct.
 
 ```{figure} ./figures/display_imported_stubs.png
 ---
@@ -248,6 +272,12 @@ There were no duplicates, so she clicked "Complete Import".
 
 ## Identification
 
+All the imported studies are visible in the first column
+of our PRISMA board: Identification.
+The purpose of identification is to find duplicated studies,
+which is more of a concern when multiple searches are included.
+Since Dr. Lytical's only source was PubMed, it is unlikely there
+are any duplicates.
 
 ```{figure} ./figures/identification.png
 ---
@@ -272,15 +302,18 @@ Luckily, there were no duplicates, so each study was promoted to the next stage 
 
 In this stage, Dr. Lytical is attempting to determine if the study has any relevancy to her meta-analysis.
 For example, the study could be about cannabis
-or it could be about colorectal cancer, which are topics Dr. Lytical is not interested in.
-Now Dr. Lytical takes a closer look at the title and abstract of each study and identifies whether each study has relevancy to her meta-analysis.
+or it could be about colorectal cancer, which are topics, outside the topic
+of Dr. Lytical's meta-analysis.
+Please read the title and abstracts along with Dr. Lytical and determine whether each study has relevancy to her meta-analysis.
 
 ## Eligibility
 
 With duplicates and relevancy resolved, Dr. Lytical is now ready to determine if the study meets the eligibility criteria.
-In this stage Dr. Lytical needs to read the methods
+In this stage Dr. Lytical likely needs to read the methods
 section of each study and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Lytical will need to be patient and thorough.
+"Wait!", Dr. Anna Lytical exclaims, what are my eligibility criteria!
+Thankfully, the eligibility criteria are printed below.
 
 
 ### Eligibility criteria
@@ -288,48 +321,67 @@ Each paper may take several minutes to evaluate, so Dr. Lytical will need to be 
 We included studies in this meta-analysis that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). Studies examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no study exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.
 
 
-## Ingestion
+### Eligibility determination
+
+While the eligibility criteria provide guidelines for inclusion and exclusion,
+this does not mean the answer will be obvious for each paper. Indeed, there
+are often disagreements between individuals reviewing the papers.
+In this tutorial, however, Dr. Lytical only has you, and that is enough.
+
+## Inclusion/Ingestion
 
 Hooray, Dr. Lytical has reached a critical milestone in her meta-analysis journey.
-Once the studies are ingested, Dr. Lytical will be able to extract the data from each study.
+The studies that survived your critical eye are happily waiting in the inclusion column.
+Dr. Lytical takes a quick look at the inclusion column to ensure nothing snuck through
+that was not supposed to survive.
+These studies are now ready to be ingested into a studyset for use in Dr. Lytical's
+meta-analysis.
 
 The ingestion process includes looking up the study on Neurosynth Compose's database and asking
 Dr. Lytical if she would want to use a pre-existing study or create a new one.
 If Dr. Lytical chooses to use a pre-existing study, then she will inherit all the data that was already extracted from that study, which will often include coordinates and will save her a lot of time during the extraction phase.
+So if there is an option to select an existing study, Dr. Lytical is highly motivated
+to select it.
 
-## Extraction
+Once the studies are ingested, Dr. Lytical will be able to extract/edit coordinate data from each study and label analyses for inclusion for her particular meta-analysis.
+These collective labels are called annotations.
+
+Within the context of a meta-analysis, Annotations can be explained as a way to categorize analyses within each study.
+For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the analyses.
+For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+By default you will have an "include" column to help get you started.
+
+## Extraction and Annotation
+
+Extraction and annotation are integral to a meta-analysis,
+and thankfully the Neurosynth Compose database reduces the effort
+for this process.
 
 ```{figure} ./figures/extraction_and_annotation.png
 ---
 name: extraction and annotation
 ---
-Extraction and annotation stage
+View of the extraction and annotation page on Neurosynth Compose
 ```
 
 ```{figure} ./figures/annotate_and_extract_study.png
 ---
 name: annotate and extract study
 ---
-Annotate and extract study
+View of a particular study for annotation and extraction.
 ```
 
 ```{figure} ./figures/annotation_view.png
 ---
 name: annotation view
 ---
-Annotation view
+View of the annotations for a particular study
 ```
-
 
 Dr. Lytical is on a roll.
 She has now reached the extraction phase.
-In this phase, Dr. Lytical will extract the data from each study, which will often include
+In this phase, Dr. Lytical will extract the data from each study, specifically
 coordinates and annotations.
-
-Within the context of a meta-analysis, Annotations can be explained as a way to categorize analyses within each study.
-For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the analyses.
-For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
-By default you will have an "include" column to help get you started.
 
 In conjunction with annotating the analyses, Dr. Lytical will also need to extract and/or edit the coordinates for each analysis.
 While Neurosynth Compose has many coordinates automatically extracted, Dr. Lytical will need to extract the data from some of the analyses Neurosynth Compose has not seen before.
@@ -343,7 +395,10 @@ Study with no analyses
 ```
 
 For the rest, Neurosynth Compose provides an interface to add/edit coordinates.
-Dr. Lytical can either directly add the coordinates on the website or she can upload a csv file with extracted coordinates.
+Dr. Lytical can directly add the coordinates on the website, by copy/pasting the
+coordinates into the platform.
+It's often easiest to copy/paste the table into google sheets first,
+and then select the coordinates to paste into Neurosynth Compose.
 
 
 ```{figure} ./figures/add_coordinates.png
@@ -357,6 +412,8 @@ She skillfully add the coordinates for the remaining studies and is now ready to
 
 
 ## Meta-analysis specification
+
+The meta-analysis specification
 
 ```{figure} ./figures/proceed_meta_analysis.png
 ---
@@ -477,4 +534,6 @@ She finds some interesting clusters in the DMN region and ECN networks. These ne
 are considered task negative and task positive networks respectively.
 Since we did not differentiate between whether the coordinates included in the meta-analysis represented an increase or decrease in activation, Dr. Lytical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that studies tended to report significant coordinates within these regions.
 As a follow up analysis, Dr. Anna Lytical could label the analyses as either "activation" or "deactivation" and run a separate meta-analysis for each category.
+
+## Conclusion
 
