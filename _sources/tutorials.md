@@ -10,7 +10,7 @@ For this tutorial we are using a slimmed down replication of
 After this tutorial, you will gain a fundamental understanding of how to use Neurosynth Compose to conduct a meta-analysis. Specifically, you will learn about:
 
 1. Creating a {term}`Project` on Neurosynth Compose.
-2. Searching for {term}`studies <study>` on pubmed.
+2. Searching for {term}`studies <study>` on PubMed.
 3. Adding {term}`studies <study>` to a {term}`project`.
 4. Curating {term}`studies <study>` using [PRISMA](http://prisma-statement.org/) guidelines
 5. Extracting and {term}`Annotating <annotation>` {term}`analyses <analysis>` within studies
@@ -162,7 +162,7 @@ or do not have retrievable information
 Double check the {term}`studies <study>` and view which {term}`studies <study>` will be included in the {term}`meta-analysis`
 ````
 
-Dr. Lytical decided to use Pubmed to search for {term}`studies <study>` for this {term}`meta-analysis`.
+Dr. Lytical decided to use PubMed to search for {term}`studies <study>` for this {term}`meta-analysis`.
 
 ```{figure} ./figures/pubmed_main_page.png
 ---
@@ -171,7 +171,7 @@ name: pubmed main page
 Pubmed landing page
 ```
 
-Hopping over to Pubmed, Dr. Lytical clicked on the advanced text below the main search box,
+Hopping over to PubMed, Dr. Lytical clicked on the advanced text below the main search box,
 and put the following text in the advanced search box:
 
 ```
@@ -217,7 +217,7 @@ Example pmid file
 
 We are only searching for {term}`studies <study>` in 2011 to keep the results shorter.
 140 results! Oh no, that will still take too much time.
-Luckily Dr. Lytical remembered that she had previously narrowed down a list of pubmed ids.
+Luckily Dr. Lytical remembered that she had previously narrowed down a list of PubMed ids.
 She found the file (linked below) and continued to the next step.
 
 :::{important}
@@ -235,8 +235,8 @@ Import studies into neurostore
 ```
 
 When importing {term}`studies <study>`, Dr. Lytical needs to select a search source, which could be from
-the Neurosynth Compose database, Pubmed, a citation manager, or a manually inserted {term}`study`.
-Since she searched on PubMed, she selected "Import Via Pubmed ID List".
+the Neurosynth Compose database, PubMed, a citation manager, or a manually inserted {term}`study`.
+Since she searched on PubMed, she selected "Import Via PubMed ID List".
 
 
 ```{figure} ./figures/select_search_source.png
@@ -246,7 +246,7 @@ name: select search source
 Select search source
 ```
 
-Dr. Lytical uploaded the pmid file that she had downloaded from Pubmed.
+Dr. Lytical uploaded the pmid file that she had downloaded from PubMed.
 She could also copy and paste the pmids into the text box.
 
 ```{figure} ./figures/upload_pmid_file.png
@@ -318,7 +318,7 @@ Thankfully, the eligibility criteria are printed below.
 
 ### Eligibility criteria
 
-We included {term}`studies <study>` in this {term}`meta-analysis` that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). {term}`studies <study>` examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no {term}`study` exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.
+We included {term}`studies <study>` in this {term}`meta-analysis` that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). {term}`Studies <study>` examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no {term}`study` exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.
 
 
 ### Eligibility determination
@@ -332,8 +332,8 @@ In this tutorial, however, Dr. Lytical only has you, and that is enough.
 
 Hooray, Dr. Lytical has reached a critical milestone in her {term}`meta-analysis` journey.
 The {term}`studies <study>` that survived your critical eye are happily waiting in the inclusion column.
-Dr. Lytical takes a quick look at the inclusion column to ensure nothing snuck through
-that was not supposed to survive.
+Dr. Lytical takes a quick look at the inclusion column to ensure no paper snuck through
+that was not supposed to survive curation.
 These {term}`studies <study>` are now ready to be ingested into a {term}`studyset` for use in Dr. Lytical's
 {term}`meta-analysis`.
 
@@ -348,13 +348,13 @@ These collective labels are called annotations.
 
 Within the context of a {term}`meta-analysis`, Annotations can be explained as a way to categorize {term}`analyses <analysis>` within each {term}`study`.
 For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the {term}`analyses <analysis>`.
-For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" annotation column.
 By default you will have an "include" column to help get you started.
 
 ## Extraction and Annotation
 
 Extraction and annotation are integral to a {term}`meta-analysis`,
-and thankfully the Neurosynth Compose database reduces the effort
+and, thankfully, the Neurosynth Compose database reduces the effort
 for this process.
 
 ```{figure} ./figures/extraction_and_annotation.png
@@ -454,8 +454,8 @@ Select column activations
 ```
 
 Dr. Lytical is now ready to specify the algorithmic parameters for her {term}`meta-analysis`.
-She chooses ALE (Activation Likelihood Estimation) as the algorithm and selects
-8mm as the kernel size.
+She chooses ALE (Activation Likelihood Estimation; {numref}`algorithm overview`) as the algorithm and selects
+8mm as the kernel size {numref}`algorithm parameters`.
 
 ```{figure} ./figures/algorithm_overview.png
 ---
@@ -525,16 +525,16 @@ None were excluded so she can move on to check the mask to ensure it has whole b
 Seeing the mask covers the whole brain, she moves on to check the peak coordinates reported from
 all the {term}`analyses <analysis>` included in the {term}`meta-analysis`.
 In this step, she can see which coordinates are outside the mask and if there is an unusual distribution
-of coordinates (e.g., they are all on the left side of the brain, or many appear to be in white matter tracts).
+of coordinates (e.g., are they are all on the left side of the brain? are there many coordinates in white matter tracts?).
 
-She confirms that the meta-analytic parameters she chose in the specification match what is inside the report.
+She confirms that the meta-analytic parameters she chose in the specification match what is in the report.
 Then she can interactively view the results to see where the significant clusters are located.
 Remembering her training, Dr. Lytical recalls the Activation Likelihood Estimation creates values that can be interpreted as the probability that a voxel is activated given the {term}`studies <study>` included in the {term}`meta-analysis`.
-The z-values she is looking at represent the significance of that activation relative to a baseline of the voxel's expected activation if all the foci were randomly distributed across the brain.
-And the z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.
+The Z-values she is looking at represent the significance of that activation relative to a baseline of the voxel's expected activation if all the foci were randomly distributed across the brain.
+And the Z-scores have been corrected with FDR (False Discovery Rate) correction, to help control for false positives.
 
-She identifies clusters in the Default Mode Network (DMN) and Executive Cognition Network (ECN). These networks
-are considered task negative and task positive networks respectively.
+She identifies clusters in the Default Mode Network (DMN) and Executive Cognition Network (ECN). In the literature, these networks
+are considered task negative and task positive networks, respectively.
 Since we did not differentiate between whether the coordinates included in the {term}`meta-analysis` represented an increase or decrease in activation, Dr. Lytical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that {term}`studies <study>` tended to report significant coordinates within these regions.
 As a follow up analysis, Dr. Anna Lytical could label the {term}`analyses <analysis>` as either "activation" or "deactivation" and run a separate {term}`meta-analysis` for each category.
 
