@@ -7,9 +7,9 @@ For this tutorial we are using a slimmed down replication of
 
 ## Learning Goals
 
-After this tutorial, you will gain a fundamental understanding of how to use Neurosynth Compose to conduct a meta-analysis. Specifically, you will learn about:
+After this tutorial, you will gain a fundamental understanding of how to use [Neurosynth Compose](https://compose.neurosynth.org) to conduct a meta-analysis. Specifically, you will learn about:
 
-1. Creating a {term}`Project` on Neurosynth Compose.
+1. Creating a {term}`Project` on [Neurosynth Compose](https://compose.neurosynth.org).
 2. Searching for {term}`studies <study>` on PubMed.
 3. Adding {term}`studies <study>` to a {term}`project`.
 4. Curating {term}`studies <study>` using [PRISMA](http://prisma-statement.org/) guidelines
@@ -76,7 +76,7 @@ the publications.
 One stuck out to her: [`Neurobiological impact of nicotinic acetylcholine receptor agonists`](https://pubmed.ncbi.nlm.nih.gov/25662104/).
 She had taken a neurobiology class in college and the class had a whole section on nicotinic acetylcholine
 receptors.
-Dr. Lytical was in business.
+Dr. Lytical was back in business.
 
 :::{important}
 This tutorial is not a recommendation on how one should choose a topic for {term}`meta-analysis`. One should give proper thought on the topic of their {term}`meta-analysis`, and have talked to their mentors and collaborators beforehand. Please see the [PRISMA statement](https://www.bmj.com/content/372/bmj.n71) and the [10 simple rules for neuroimaging meta-analyses](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918306/).
@@ -101,7 +101,7 @@ Nicotinic acetylcholine receptor (nAChR) agonists augment cognition among cigare
 ```
 
 After inserting the name and description, she clicked "Create"
-and was redirected to the following page
+and was redirected to the following page:
 
 ```{figure} ./figures/new_project_view.png
 ---
@@ -110,7 +110,7 @@ name: new project view
 View of the new project.
 ```
 
-Dr. Lytical's next step is to search and curate the {term}`studies <study>` she wants to include in her {term}`meta-analysis`.
+Dr. Lytical's next step was to search and curate the {term}`studies <study>` she wanted to include in her {term}`meta-analysis`.
 
 ## Searching for studies
 
@@ -126,7 +126,8 @@ Selecting the PRISMA workflow
 
 Since Dr. Lytical is replicating a manually curated {term}`meta-analysis`, she selected the "PRISMA Workflow". [PRISMA](http://prisma-statement.org/), or Preferred Reporting Items for Systematic Reviews and Meta-Analyses, is a set of guidelines for conducting systematic reviews and meta-analyses.
 While PRISMA encompasses the entire {term}`project` workflow, Dr. Lytical has the most agency
-on how strictly she will abide to the guidelines during the curation process.
+on how strictly she will abide to the guidelines during the search and curation process.
+Other components of PRISMA are handled by Neurosynth Compose.
 
 ```{figure} ./figures/empty_curation_board.png
 ---
@@ -137,6 +138,7 @@ View of the empty curation board.
 
 She was presented with an empty curation board, with 4 sections: "Identification",
 "Screening", "Eligibility", and "Included".
+
 ````{card}
 {bdg-primary}`Identification`
 
@@ -224,19 +226,25 @@ She found the file (linked below) and continued to the next step.
 **[TUTORIAL PMID FILE](./data/tutorial_pmids.txt)**
 :::
 
-With the pmid file in hand, Dr. Lytical went back to neurostore and clicked on the "Import Studies" button
+With the pmid file in hand, Dr. Lytical went back to Neurosynth Compose and clicked on the "Import Studies" button
 on the top right of the curation board page.
+
 
 ```{figure} ./figures/import_studies.png
 ---
 name: import studies
 ---
-Import studies into neurostore
+Import studies into Neurosynth Compose
 ```
 
 When importing {term}`studies <study>`, Dr. Lytical needs to select a search source, which could be from
 the Neurosynth Compose database, PubMed, a citation manager, or a manually inserted {term}`study`.
 Since she searched on PubMed, she selected "Import Via PubMed ID List".
+
+:::{note}
+The Neurosynth Compose database is called "Neurostore". It is a database of {term}`studies <study>` that have been automatically extracted from various journals,
+and user edited {term}`studies <study>`.
+:::
 
 
 ```{figure} ./figures/select_search_source.png
@@ -277,7 +285,9 @@ of our PRISMA board: Identification.
 The purpose of identification is to find duplicated {term}`studies <study>`,
 which is more of a concern when multiple searches are included.
 Since Dr. Lytical's only source was PubMed, it is unlikely there
-are any duplicates.
+are any duplicates. Regardless, Dr. Lytical clicked on the first {term}`study`
+card to view the {term}`study` in more detail and confirm that she can promote
+the study to the next Screening stage.
 
 ```{figure} ./figures/identification.png
 ---
@@ -312,14 +322,13 @@ With duplicates and relevancy resolved, Dr. Lytical is now ready to determine if
 In this stage Dr. Lytical likely needs to read the methods
 section of each {term}`study` and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Lytical will need to be patient and thorough.
-"Wait!", Dr. Anna Lytical exclaims, what are my eligibility criteria!
-Thankfully, the eligibility criteria are printed below.
-
+"Wait!", Dr. Anna Lytical exclaims, "What are my eligibility criteria?"
+Thankfully, the eligibility criteria was already written in the protocol
+of the original paper, and is reproduced below.
 
 ### Eligibility criteria
 
 We included {term}`studies <study>` in this {term}`meta-analysis` that: 1) employed fMRI or PET; 2) reported brain activity changes in stereotaxic coordinates (either Talairach or MNI space); 3) reported a set of coordinates (i.e., foci) from a within-subjects or between-subjects contrast assessing the effects of nAChR agonist administration (i.e., pharmacological administration or cigarette smoking) relative to a baseline condition (i.e., placebo administration or smoking-abstinence condition); and 4) examined brain activity using a cognitive or affective task paradigm or at rest (i.e., in the absence of explicit task demands). {term}`Studies <study>` examining functional connectivity, brain morphology, or neurochemistry were not included. Given the relatively modest but expanding corpus of literature regarding the impact of nAChR agonists on human brain function, no {term}`study` exclusions were made on the basis of participant age, neuropsychiatric condition, or statistical threshold considerations.
-
 
 ### Eligibility determination
 
@@ -340,15 +349,17 @@ These {term}`studies <study>` are now ready to be ingested into a {term}`studyse
 The ingestion process includes looking up the {term}`study` on Neurosynth Compose's database and asking
 Dr. Lytical if she would want to use a pre-existing {term}`study` or create a new one.
 If Dr. Lytical chooses to use a pre-existing {term}`study`, then she will inherit all the data that was already extracted from that {term}`study`, which will often include coordinates and will save her a lot of time during the extraction phase.
-So if there is an option to select an existing {term}`study`, Dr. Lytical is highly motivated
-to select it.
+So if there is an option to select an existing {term}`study`, Dr. Lytical is highly motivated to select it.
+Please choose the pre-existing {term}`study` for each {term}`study` that has one.
 
 Once the {term}`studies <study>` are ingested, Dr. Lytical will be able to extract/edit coordinate data from each {term}`study` and label {term}`analyses <analysis>` for inclusion for her particular {term}`meta-analysis`.
 These collective labels are called annotations.
 
 Within the context of a {term}`meta-analysis`, Annotations can be explained as a way to categorize {term}`analyses <analysis>` within each {term}`study`.
 For example, they can be categorized by task (e.g., Stroop, N-back, etc.), by modality (e.g., fMRI, PET, etc.), or by any other category that you want to use to filter the {term}`analyses <analysis>`.
-For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" annotation column.
+For this replication, Dr. Lytical is interested in the effects of nAChR agonists on the brain, which can either be excitatory or inhibitory, so she adds both an "activation" and "deactivation" column.
+She has can choose the data type of each column as either a Number, String, or Boolean.
+She selected a Boolean data type for the "activation" and "deactivation" columns, which will allow her to filter the {term}`analyses <analysis>` by whether they are excitatory or inhibitory.
 By default you will have an "include" column to help get you started.
 
 ## Extraction and Annotation
@@ -409,7 +420,6 @@ Add coordinates
 ```
 
 She skillfully add the coordinates for the remaining {term}`studies <study>` and is now ready to move on to the next stage.
-
 
 ## Meta-analysis specification
 
