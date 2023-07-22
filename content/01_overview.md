@@ -19,7 +19,7 @@ studies that are relevant to your meta-analysis.
 
 There are several methods for running either coordinate-based or image-based meta-analyses.
 Which method you can use is dependent on the assumptions you would like to make about your data
-and the availablity of certain data.
+and the availability of certain data.
 
 
 ## Running your meta-analysis
