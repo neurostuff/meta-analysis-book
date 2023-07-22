@@ -451,16 +451,16 @@ Name the meta-analysis
 
 Dr. Lytical is now ready to select the {term}`analyses <analysis>` and specify the algorithm.
 She clicks on the "Meta-Analysis Specification" button and is presented with a wizard that will guide her through the process.
-She names this {term}`meta-analysis`: "nicotinic agonist activations".
+She names this {term}`meta-analysis`: "overall effect".
 
 For this particular {term}`meta-analysis` she chooses "included" and goes through a wizard
 to specify the algorithmic parameters for her {term}`meta-analysis`.
 
-```{figure} ./figures/select_column_activations.png
+```{figure} ./figures/select_column_included.png
 ---
-name: select column activations
+name: select column included
 ---
-Select column activations
+Select column included
 ```
 
 Dr. Lytical is now ready to specify the algorithmic parameters for her {term}`meta-analysis`.
