@@ -352,8 +352,6 @@ If Dr. Lytical chooses to use a pre-existing {term}`study`, then she will inheri
 So if there is an option to select an existing {term}`study`, Dr. Lytical is highly motivated to select it.
 Please choose the pre-existing {term}`study` for each {term}`study` that has one.
 
-```{figure} ./figures/ingestion.png
-
 Once the {term}`studies <study>` are ingested, Dr. Lytical will be able to extract/edit coordinate data from each {term}`study` and label {term}`analyses <analysis>` for inclusion for her particular {term}`meta-analysis`.
 These collective labels are called annotations.
 
