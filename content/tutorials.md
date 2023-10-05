@@ -163,6 +163,34 @@ or do not have retrievable information
 
 Double check the {term}`studies <study>` and view which {term}`studies <study>` will be included in the {term}`meta-analysis`
 ````
+Dr. Lytical has 4 options to import studies into her project.
+1. Neurostore
+2. PubMed
+3. Manually create study
+4. Citation manager export (e.g., `.ris`)
+
+
+### Neurostore
+
+Neurostore is a database that contains all the studies that have been automatically extracted and studies that other users have shared.
+Every study in Neurostore is guaranteed to have coordinates or images that are amenable to meta-analysis.
+
+### PubMed
+
+PubMed is a database of biomedical literature maintained by the National Library of Medicine.
+It is a traditional source for searching for studies.
+
+### Manually Created Study
+
+If you have unpublished data or the study is not tracked by pubmed or neurostore
+you have the option to manually create a study.
+
+### Citation Manager Export
+
+If you have curated a studies in your citation manager, you can get a quick start
+to your meta-analysis by importing the studies from your citation manager.
+
+### Dr. Lytical searches on Pubmed
 
 Dr. Lytical decided to use PubMed to search for {term}`studies <study>` for this {term}`meta-analysis`.
 
@@ -322,7 +350,10 @@ With duplicates and relevancy resolved, Dr. Lytical is now ready to determine if
 In this stage Dr. Lytical likely needs to read the methods
 section of each {term}`study` and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Lytical will need to be patient and thorough.
-"Wait!", Dr. Anna Lytical exclaims, "What are my eligibility criteria?"
+"Wait!", Dr. Anna Lytical exclaims, "What are my eligibility criteria?".
+Typically, the researcher would have to come up with the eligibility criteria
+on their own using their knowledge of the research question and literature
+to guide them.
 Thankfully, the eligibility criteria was already written in the protocol
 of the original paper, and is reproduced below.
 
@@ -503,6 +534,9 @@ and 0.05 as the p-value threshold.
 With the {term}`analyses <analysis>` selected and the algorithm chosen and specified, Dr. Lytical is now ready to run the {term}`meta-analysis`.
 She follows the google colab link and inserts the identifier that specifies the {term}`meta-analysis`.
 she wants to run.
+
+:::{note}
+
 
 
 ```{figure} ./figures/colab_button.png
