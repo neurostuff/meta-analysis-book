@@ -128,6 +128,7 @@ Since Dr. Lytical is replicating a manually curated {term}`meta-analysis`, she s
 While PRISMA encompasses the entire {term}`project` workflow, Dr. Lytical has the most agency
 on how strictly she will abide to the guidelines during the search and curation process.
 Other components of PRISMA are handled by Neurosynth Compose.
+"Simple Workflow" is more streamlined and has one step for curation, while "Custom Workflow" allows the user to create their own steps for curation.
 
 ```{figure} ./figures/empty_curation_board.png
 ---
@@ -163,6 +164,25 @@ or do not have retrievable information
 
 Double check the {term}`studies <study>` and view which {term}`studies <study>` will be included in the {term}`meta-analysis`
 ````
+
+The next step is to import {term}`studies <study>` into the {term}`project`.
+
+```{figure} ./figures/import_studies.png
+---
+name: import studies
+---
+Import studies into Neurosynth Compose
+```
+
+After clicking on the import studies button, Dr. Lytical was presented with the following options:
+
+```{figure} ./figures/import_studies_options.png
+---
+name: import studies options
+---
+Options to import studies into Neurosynth Compose
+```
+
 Dr. Lytical has 4 options to import studies into her project.
 1. Neurostore
 2. PubMed
@@ -258,13 +278,6 @@ With the pmid file in hand, Dr. Lytical went back to Neurosynth Compose and clic
 on the top right of the curation board page.
 
 
-```{figure} ./figures/import_studies.png
----
-name: import studies
----
-Import studies into Neurosynth Compose
-```
-
 When importing {term}`studies <study>`, Dr. Lytical needs to select a search source, which could be from
 the Neurosynth Compose database, PubMed, a citation manager, or a manually inserted {term}`study`.
 Since she searched on PubMed, she selected "Import Via PubMed ID List".
@@ -295,7 +308,7 @@ Upload the tutorial pmid file
 She can now view all the {term}`studies <study>` she imported as a quick visual confirmation
 the {term}`studies <study>` look correct.
 
-```{figure} ./figures/display_imported_stubs.png
+```{figure} ./figures/display_imported_stubs_1.png
 ---
 name: display imported studies
 ---
@@ -305,6 +318,13 @@ Display imported studies
 Dr. Lytical named the search
 "manually filtered nicotinic acetylcholine receptor agonists pubmed search" and clicked "Next".
 There were no duplicates, so she clicked "Complete Import".
+
+```{figure} ./figures/import_search_name.png
+---
+name: name the import search
+---
+Name the import search
+```
 
 ## Identification
 
@@ -351,8 +371,8 @@ In this stage Dr. Lytical likely needs to read the methods
 section of each {term}`study` and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Lytical will need to be patient and thorough.
 "Wait!", Dr. Anna Lytical exclaims, "What are my eligibility criteria?".
-Typically, the researcher would have to come up with the eligibility criteria
-on their own using their knowledge of the research question and literature
+Typically, Dr. Lytical would have to come up with the eligibility criteria
+on her own using her knowledge of the research question and literature
 to guide them.
 Thankfully, the eligibility criteria was already written in the protocol
 of the original paper, and is reproduced below.
@@ -367,22 +387,38 @@ While the eligibility criteria provide guidelines for inclusion and exclusion,
 this does not mean the answer will be obvious for each paper. Indeed, there
 are often disagreements between individuals reviewing the papers.
 In this tutorial, however, Dr. Lytical only has you, and that is enough.
+**Please take this time to go through the papers and determine eligibility.**
 
 ## Inclusion/Ingestion
 
-Hooray, Dr. Lytical has reached a critical milestone in her {term}`meta-analysis` journey.
+Hooray! Dr. Lytical has reached a critical milestone in her {term}`meta-analysis` journey.
 The {term}`studies <study>` that survived your critical eye are happily waiting in the inclusion column.
 Dr. Lytical takes a quick look at the inclusion column to ensure no paper snuck through
 that was not supposed to survive curation.
 These {term}`studies <study>` are now ready to be ingested into a {term}`studyset` for use in Dr. Lytical's
 {term}`meta-analysis`.
 
-The ingestion process includes looking up the {term}`study` on Neurosynth Compose's database and asking
-Dr. Lytical if she would want to use a pre-existing {term}`study` or create a new one.
-If Dr. Lytical chooses to use a pre-existing {term}`study`, then she will inherit all the data that was already extracted from that {term}`study`, which will often include coordinates and will save her a lot of time during the extraction phase.
-So if there is an option to select an existing {term}`study`, Dr. Lytical is highly motivated to select it.
-Please choose the pre-existing {term}`study` for each {term}`study` that has one.
+```{figure} ./figures/move_to_extraction.png
+---
+name: move to the extraction phase
+---
+Ingestion Button
+```
 
+```{figure} ./figures/create_studyset.png
+---
+name: create studyset
+---
+Create the studyset
+```
+
+
+```{figure} ./figures/create_annotation_keys.png
+---
+name: create annotation keys
+---
+Create the annotation keys}
+```
 Once the {term}`studies <study>` are ingested, Dr. Lytical will be able to extract/edit coordinate data from each {term}`study` and label {term}`analyses <analysis>` for inclusion for her particular {term}`meta-analysis`.
 These collective labels are called annotations.
 
@@ -392,6 +428,27 @@ For this replication, Dr. Lytical is interested in the effects of nAChR agonists
 She has can choose the data type of each column as either a Number, String, or Boolean.
 She selected a Boolean data type for the "activation" and "deactivation" columns, which will allow her to filter the {term}`analyses <analysis>` by whether they are excitatory or inhibitory.
 By default you will have an "include" column to help get you started.
+
+```{figure} ./figures/begin_ingestion.png
+---
+name: begin ingestion
+---
+Begin Ingestion of studies into neurosynth-compose
+```
+
+```{figure} ./figures/ingestion_selection.png
+---
+name: Ingestion Options
+---
+Multiple versions of the same study
+```
+
+The ingestion process includes looking up the {term}`study` on Neurosynth Compose's database and asking
+Dr. Lytical if she would want to use a pre-existing {term}`study` or create a new one.
+If Dr. Lytical chooses to use a pre-existing {term}`study`, then she will inherit all the data that was already extracted from that {term}`study`, which will often include coordinates and will save her a lot of time during the extraction phase.
+So if there is an option to select an existing {term}`study`, Dr. Lytical is highly motivated to select it.
+Please choose the pre-existing {term}`study` on Neurostore
+for each {term}`study` that has one.
 
 ## Extraction and Annotation
 
@@ -498,7 +555,7 @@ Dr. Lytical is now ready to specify the algorithmic parameters for her {term}`me
 She chooses ALE (Activation Likelihood Estimation; {numref}`algorithm overview`) as the algorithm and selects
 8mm as the kernel size {numref}`algorithm parameters`.
 
-```{figure} ./figures/algorithm_overview.png
+```{figure} ./figures/algorithm_overview_1.png
 ---
 name: algorithm overview
 ---
@@ -512,14 +569,14 @@ name: algorithm parameters
 Algorithm parameters
 ```
 
-```{figure} ./figures/corrector_parameters.png
+```{figure} ./figures/corrector_parameters_1.png
 ---
 name: corrector parameters
 ---
 Corrector parameters
 ```
 
-```{figure} ./figures/parameter_review.png
+```{figure} ./figures/algorithm_overview_1.png
 ---
 name: parameter review
 ---
@@ -546,11 +603,18 @@ name: colab button
 Colab button
 ```
 
-```{figure} ./figures/notebook_code.png
+```{figure} ./figures/notebook_code_1.png
 ---
 name: notebook code
 ---
 Notebook code
+```
+
+```{figure} ./figures/notebook_insert_meta_analysis_id.png
+---
+name: meta analysis id
+---
+Insert meta analysis ID.
 ```
 
 She executes the analysis and waits for the results.
