@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -266,10 +276,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -277,7 +287,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -306,7 +316,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurostore">Neurostore</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubmed">PubMed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually-created-study">Manually Created Study</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-manager-export">Citation Manager Export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-lytical-searches-on-pubmed">Dr. Lytical searches on Pubmed</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening">Screening</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a><ul class="nav section-nav flex-column">
@@ -318,8 +335,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-annotation">Extraction and Annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis-specification">Meta-analysis specification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-meta-analysis">Running the meta-analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">interpreting the results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
             </nav>
         </div>
@@ -440,7 +455,8 @@ three options: “PRISMA Workflow”, “Simple Workflow”, and “Custom Workf
 <p>Since Dr. Lytical is replicating a manually curated <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>, she selected the “PRISMA Workflow”. <a class="reference external" href="http://prisma-statement.org/">PRISMA</a>, or Preferred Reporting Items for Systematic Reviews and Meta-Analyses, is a set of guidelines for conducting systematic reviews and meta-analyses.
 While PRISMA encompasses the entire <a class="reference internal" href="glossary.html#term-Project"><span class="xref std std-term">project</span></a> workflow, Dr. Lytical has the most agency
 on how strictly she will abide to the guidelines during the search and curation process.
-Other components of PRISMA are handled by Neurosynth Compose.</p>
+Other components of PRISMA are handled by Neurosynth Compose.
+“Simple Workflow” is more streamlined and has one step for curation, while “Custom Workflow” allows the user to create their own steps for curation.</p>
 <figure class="align-default" id="empty-curation-board">
 <img alt="_images/empty_curation_board.png" src="_images/empty_curation_board.png" />
 <figcaption>
@@ -474,11 +490,54 @@ or do not have retrievable information</p>
 <p class="sd-card-text">Double check the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> and view which <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> will be included in the <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a></p>
 </div>
 </div>
+<p>The next step is to import <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> into the <a class="reference internal" href="glossary.html#term-Project"><span class="xref std std-term">project</span></a>.</p>
+<figure class="align-default" id="import-studies">
+<img alt="_images/import_studies.png" src="_images/import_studies.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Import studies into Neurosynth Compose</span><a class="headerlink" href="#import-studies" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>After clicking on the import studies button, Dr. Lytical was presented with the following options:</p>
+<figure class="align-default" id="import-studies-options">
+<img alt="_images/import_studies_options.png" src="_images/import_studies_options.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Options to import studies into Neurosynth Compose</span><a class="headerlink" href="#import-studies-options" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Dr. Lytical has 4 options to import studies into her project.</p>
+<ol class="arabic simple">
+<li><p>Neurostore</p></li>
+<li><p>PubMed</p></li>
+<li><p>Manually create study</p></li>
+<li><p>Citation manager export (e.g., <code class="docutils literal notranslate"><span class="pre">.ris</span></code>)</p></li>
+</ol>
+<section id="neurostore">
+<h3>Neurostore<a class="headerlink" href="#neurostore" title="Permalink to this heading">#</a></h3>
+<p>Neurostore is a database that contains all the studies that have been automatically extracted and studies that other users have shared.
+Every study in Neurostore is guaranteed to have coordinates or images that are amenable to meta-analysis.</p>
+</section>
+<section id="pubmed">
+<h3>PubMed<a class="headerlink" href="#pubmed" title="Permalink to this heading">#</a></h3>
+<p>PubMed is a database of biomedical literature maintained by the National Library of Medicine.
+It is a traditional source for searching for studies.</p>
+</section>
+<section id="manually-created-study">
+<h3>Manually Created Study<a class="headerlink" href="#manually-created-study" title="Permalink to this heading">#</a></h3>
+<p>If you have unpublished data or the study is not tracked by pubmed or neurostore
+you have the option to manually create a study.</p>
+</section>
+<section id="citation-manager-export">
+<h3>Citation Manager Export<a class="headerlink" href="#citation-manager-export" title="Permalink to this heading">#</a></h3>
+<p>If you have curated a studies in your citation manager, you can get a quick start
+to your meta-analysis by importing the studies from your citation manager.</p>
+</section>
+<section id="dr-lytical-searches-on-pubmed">
+<h3>Dr. Lytical searches on Pubmed<a class="headerlink" href="#dr-lytical-searches-on-pubmed" title="Permalink to this heading">#</a></h3>
 <p>Dr. Lytical decided to use PubMed to search for <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> for this <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.</p>
 <figure class="align-default" id="pubmed-main-page">
 <img alt="_images/pubmed_main_page.png" src="_images/pubmed_main_page.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Pubmed landing page</span><a class="headerlink" href="#pubmed-main-page" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Pubmed landing page</span><a class="headerlink" href="#pubmed-main-page" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Hopping over to PubMed, Dr. Lytical clicked on the advanced text below the main search box,
@@ -490,14 +549,14 @@ and put the following text in the advanced search box:</p>
 <figure class="align-default" id="advanced-search-for-pubmed">
 <img alt="_images/advanced_search_query_pubmed.png" src="_images/advanced_search_query_pubmed.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Pubmed advanced search</span><a class="headerlink" href="#advanced-search-for-pubmed" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Pubmed advanced search</span><a class="headerlink" href="#advanced-search-for-pubmed" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She got the following results from her search.</p>
 <figure class="align-default" id="search-results-for-pubmed">
 <img alt="_images/search_results.png" src="_images/search_results.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Pubmed search results</span><a class="headerlink" href="#search-results-for-pubmed" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Pubmed search results</span><a class="headerlink" href="#search-results-for-pubmed" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She downloaded the results as a PMID file, by clicking on the save button.
@@ -506,13 +565,13 @@ This will download a text file with a PMID on each row.</p>
 <figure class="align-default" id="download-search-results">
 <img alt="_images/download_search_results.png" src="_images/download_search_results.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Download search results</span><a class="headerlink" href="#download-search-results" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Download search results</span><a class="headerlink" href="#download-search-results" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="example-pmid-file">
 <img alt="_images/pmid_file.png" src="_images/pmid_file.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Example pmid file</span><a class="headerlink" href="#example-pmid-file" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Example pmid file</span><a class="headerlink" href="#example-pmid-file" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>We are only searching for <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> in 2011 to keep the results shorter.
@@ -525,12 +584,6 @@ She found the file (linked below) and continued to the next step.</p>
 </div>
 <p>With the pmid file in hand, Dr. Lytical went back to Neurosynth Compose and clicked on the “Import Studies” button
 on the top right of the curation board page.</p>
-<figure class="align-default" id="import-studies">
-<img alt="_images/import_studies.png" src="_images/import_studies.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Import studies into Neurosynth Compose</span><a class="headerlink" href="#import-studies" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
 <p>When importing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a>, Dr. Lytical needs to select a search source, which could be from
 the Neurosynth Compose database, PubMed, a citation manager, or a manually inserted <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>.
 Since she searched on PubMed, she selected “Import Via PubMed ID List”.</p>
@@ -542,7 +595,7 @@ and user edited <a class="reference internal" href="glossary.html#term-Study"><s
 <figure class="align-default" id="select-search-source">
 <img alt="_images/select_search_source.png" src="_images/select_search_source.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Select search source</span><a class="headerlink" href="#select-search-source" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Select search source</span><a class="headerlink" href="#select-search-source" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical uploaded the pmid file that she had downloaded from PubMed.
@@ -550,20 +603,27 @@ She could also copy and paste the pmids into the text box.</p>
 <figure class="align-default" id="upload-pmid-file">
 <img alt="_images/upload_pmid_file.png" src="_images/upload_pmid_file.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Upload the tutorial pmid file</span><a class="headerlink" href="#upload-pmid-file" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Upload the tutorial pmid file</span><a class="headerlink" href="#upload-pmid-file" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She can now view all the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> she imported as a quick visual confirmation
 the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> look correct.</p>
 <figure class="align-default" id="display-imported-studies">
-<img alt="_images/display_imported_stubs.png" src="_images/display_imported_stubs.png" />
+<img alt="_images/display_imported_stubs_1.png" src="_images/display_imported_stubs_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Display imported studies</span><a class="headerlink" href="#display-imported-studies" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Display imported studies</span><a class="headerlink" href="#display-imported-studies" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical named the search
 “manually filtered nicotinic acetylcholine receptor agonists pubmed search” and clicked “Next”.
 There were no duplicates, so she clicked “Complete Import”.</p>
+<figure class="align-default" id="name-the-import-search">
+<img alt="_images/import_search_name.png" src="_images/import_search_name.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Name the import search</span><a class="headerlink" href="#name-the-import-search" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 <section id="identification">
 <h2>Identification<a class="headerlink" href="#identification" title="Permalink to this heading">#</a></h2>
@@ -578,13 +638,13 @@ the study to the next Screening stage.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/identification.png" src="_images/identification.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Identification stage of curation</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Identification stage of curation</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="study-view-in-identification-stage">
 <img alt="_images/study_view_curation.png" src="_images/study_view_curation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Study view in identification stage</span><a class="headerlink" href="#study-view-in-identification-stage" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Study view in identification stage</span><a class="headerlink" href="#study-view-in-identification-stage" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical was now presented with the list of <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> that she had imported.
@@ -606,7 +666,10 @@ Please read the title and abstracts along with Dr. Lytical and determine whether
 In this stage Dr. Lytical likely needs to read the methods
 section of each <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> and determine if it meets the eligibility criteria.
 Each paper may take several minutes to evaluate, so Dr. Lytical will need to be patient and thorough.
-“Wait!”, Dr. Anna Lytical exclaims, “What are my eligibility criteria?”
+“Wait!”, Dr. Anna Lytical exclaims, “What are my eligibility criteria?”.
+Typically, Dr. Lytical would have to come up with the eligibility criteria
+on her own using her knowledge of the research question and literature
+to guide them.
 Thankfully, the eligibility criteria was already written in the protocol
 of the original paper, and is reproduced below.</p>
 <section id="eligibility-criteria">
@@ -618,22 +681,36 @@ of the original paper, and is reproduced below.</p>
 <p>While the eligibility criteria provide guidelines for inclusion and exclusion,
 this does not mean the answer will be obvious for each paper. Indeed, there
 are often disagreements between individuals reviewing the papers.
-In this tutorial, however, Dr. Lytical only has you, and that is enough.</p>
+In this tutorial, however, Dr. Lytical only has you, and that is enough.
+<strong>Please take this time to go through the papers and determine eligibility.</strong></p>
 </section>
 </section>
 <section id="inclusion-ingestion">
 <h2>Inclusion/Ingestion<a class="headerlink" href="#inclusion-ingestion" title="Permalink to this heading">#</a></h2>
-<p>Hooray, Dr. Lytical has reached a critical milestone in her <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> journey.
+<p>Hooray! Dr. Lytical has reached a critical milestone in her <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> journey.
 The <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> that survived your critical eye are happily waiting in the inclusion column.
 Dr. Lytical takes a quick look at the inclusion column to ensure no paper snuck through
 that was not supposed to survive curation.
 These <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> are now ready to be ingested into a <a class="reference internal" href="glossary.html#term-Studyset"><span class="xref std std-term">studyset</span></a> for use in Dr. Lytical’s
 <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.</p>
-<p>The ingestion process includes looking up the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> on Neurosynth Compose’s database and asking
-Dr. Lytical if she would want to use a pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> or create a new one.
-If Dr. Lytical chooses to use a pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, then she will inherit all the data that was already extracted from that <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, which will often include coordinates and will save her a lot of time during the extraction phase.
-So if there is an option to select an existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, Dr. Lytical is highly motivated to select it.
-Please choose the pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> for each <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> that has one.</p>
+<figure class="align-default" id="move-to-the-extraction-phase">
+<img alt="_images/move_to_extraction.png" src="_images/move_to_extraction.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Ingestion Button</span><a class="headerlink" href="#move-to-the-extraction-phase" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="create-studyset">
+<img alt="_images/create_studyset.png" src="_images/create_studyset.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Create the studyset</span><a class="headerlink" href="#create-studyset" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="create-annotation-keys">
+<img alt="_images/create_annotation_keys.png" src="_images/create_annotation_keys.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Create the annotation keys}</span><a class="headerlink" href="#create-annotation-keys" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>Once the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> are ingested, Dr. Lytical will be able to extract/edit coordinate data from each <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> and label <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> for inclusion for her particular <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.
 These collective labels are called annotations.</p>
 <p>Within the context of a <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>, Annotations can be explained as a way to categorize <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> within each <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>.
@@ -642,6 +719,24 @@ For this replication, Dr. Lytical is interested in the effects of nAChR agonists
 She has can choose the data type of each column as either a Number, String, or Boolean.
 She selected a Boolean data type for the “activation” and “deactivation” columns, which will allow her to filter the <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> by whether they are excitatory or inhibitory.
 By default you will have an “include” column to help get you started.</p>
+<figure class="align-default" id="begin-ingestion">
+<img alt="_images/begin_ingestion.png" src="_images/begin_ingestion.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Begin Ingestion of studies into neurosynth-compose</span><a class="headerlink" href="#begin-ingestion" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="ingestion-options">
+<img alt="_images/ingestion_selection.png" src="_images/ingestion_selection.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Multiple versions of the same study</span><a class="headerlink" href="#ingestion-options" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The ingestion process includes looking up the <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> on Neurosynth Compose’s database and asking
+Dr. Lytical if she would want to use a pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> or create a new one.
+If Dr. Lytical chooses to use a pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, then she will inherit all the data that was already extracted from that <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, which will often include coordinates and will save her a lot of time during the extraction phase.
+So if there is an option to select an existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a>, Dr. Lytical is highly motivated to select it.
+Please choose the pre-existing <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> on Neurostore
+for each <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">study</span></a> that has one.</p>
 </section>
 <section id="extraction-and-annotation">
 <h2>Extraction and Annotation<a class="headerlink" href="#extraction-and-annotation" title="Permalink to this heading">#</a></h2>
@@ -651,19 +746,19 @@ for this process.</p>
 <figure class="align-default" id="id2">
 <img alt="_images/extraction_and_annotation.png" src="_images/extraction_and_annotation.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">View of the extraction and annotation page on Neurosynth Compose</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">View of the extraction and annotation page on Neurosynth Compose</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="annotate-and-extract-study">
 <img alt="_images/annotate_and_extract_study.png" src="_images/annotate_and_extract_study.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">View of a particular study for annotation and extraction.</span><a class="headerlink" href="#annotate-and-extract-study" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">View of a particular study for annotation and extraction.</span><a class="headerlink" href="#annotate-and-extract-study" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="annotation-view">
 <img alt="_images/annotation_view.png" src="_images/annotation_view.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">View of the annotations for a particular study</span><a class="headerlink" href="#annotation-view" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">View of the annotations for a particular study</span><a class="headerlink" href="#annotation-view" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical is on a roll.
@@ -676,7 +771,7 @@ Dr. Lytical is ecstatic that so many of the <a class="reference internal" href="
 <figure class="align-default" id="study-with-no-analyses">
 <img alt="_images/study_with_no_analyses.png" src="_images/study_with_no_analyses.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Study with no analyses</span><a class="headerlink" href="#study-with-no-analyses" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Study with no analyses</span><a class="headerlink" href="#study-with-no-analyses" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>For the rest, Neurosynth Compose provides an interface to add/edit coordinates.
@@ -687,7 +782,7 @@ and then select the coordinates to paste into Neurosynth Compose.</p>
 <figure class="align-default" id="add-coordinates">
 <img alt="_images/add_coordinates.png" src="_images/add_coordinates.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Add coordinates</span><a class="headerlink" href="#add-coordinates" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Add coordinates</span><a class="headerlink" href="#add-coordinates" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She skillfully add the coordinates for the remaining <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> and is now ready to move on to the next stage.</p>
@@ -701,19 +796,19 @@ learning about the different algorithms and their nuances.</p>
 <figure class="align-default" id="proceed-meta-analysis">
 <img alt="_images/proceed_meta_analysis.png" src="_images/proceed_meta_analysis.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 23 </span><span class="caption-text">The meta-analysis stage.</span><a class="headerlink" href="#proceed-meta-analysis" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">The meta-analysis stage.</span><a class="headerlink" href="#proceed-meta-analysis" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="create-meta-analysis">
 <img alt="_images/create_meta_analysis.png" src="_images/create_meta_analysis.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Create meta-analysis</span><a class="headerlink" href="#create-meta-analysis" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Create meta-analysis</span><a class="headerlink" href="#create-meta-analysis" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="name-meta-analysis">
 <img alt="_images/name_meta_analysis.png" src="_images/name_meta_analysis.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Name the meta-analysis</span><a class="headerlink" href="#name-meta-analysis" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Name the meta-analysis</span><a class="headerlink" href="#name-meta-analysis" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical is now ready to select the <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> and specify the algorithm.
@@ -722,36 +817,36 @@ She names this <a class="reference internal" href="glossary.html#term-Meta-Analy
 <p>For this particular <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> she chooses “included” and goes through a wizard
 to specify the algorithmic parameters for her <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.</p>
 <figure class="align-default" id="select-column-included">
-<img alt="figures/select_column_included.png" src="figures/select_column_included.png" />
+<img alt="_images/select_column_included.png" src="_images/select_column_included.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Select column included</span><a class="headerlink" href="#select-column-included" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Select column included</span><a class="headerlink" href="#select-column-included" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Dr. Lytical is now ready to specify the algorithmic parameters for her <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.
-She chooses ALE (Activation Likelihood Estimation; <a class="reference internal" href="#algorithm-overview"><span class="std std-numref">Fig. 27</span></a>) as the algorithm and selects
-8mm as the kernel size <a class="reference internal" href="#algorithm-parameters"><span class="std std-numref">Fig. 28</span></a>.</p>
+She chooses ALE (Activation Likelihood Estimation; <a class="reference internal" href="#algorithm-overview"><span class="std std-numref">Fig. 34</span></a>) as the algorithm and selects
+8mm as the kernel size <a class="reference internal" href="#algorithm-parameters"><span class="std std-numref">Fig. 35</span></a>.</p>
 <figure class="align-default" id="algorithm-overview">
-<img alt="_images/algorithm_overview.png" src="_images/algorithm_overview.png" />
+<img alt="_images/algorithm_overview_1.png" src="_images/algorithm_overview_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Algorithm overview</span><a class="headerlink" href="#algorithm-overview" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Algorithm overview</span><a class="headerlink" href="#algorithm-overview" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="algorithm-parameters">
 <img alt="_images/algorithm_parameters.png" src="_images/algorithm_parameters.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Algorithm parameters</span><a class="headerlink" href="#algorithm-parameters" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Algorithm parameters</span><a class="headerlink" href="#algorithm-parameters" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="corrector-parameters">
-<img alt="_images/corrector_parameters.png" src="_images/corrector_parameters.png" />
+<img alt="_images/corrector_parameters_1.png" src="_images/corrector_parameters_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Corrector parameters</span><a class="headerlink" href="#corrector-parameters" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Corrector parameters</span><a class="headerlink" href="#corrector-parameters" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="parameter-review">
-<img alt="_images/parameter_review.png" src="_images/parameter_review.png" />
+<img alt="_images/algorithm_overview_1.png" src="_images/algorithm_overview_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Parameter review</span><a class="headerlink" href="#parameter-review" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Parameter review</span><a class="headerlink" href="#parameter-review" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She selects the False Discovery Rate corrector (FDR) and selects “independent”,
@@ -762,24 +857,30 @@ and 0.05 as the p-value threshold.</p>
 <p>With the <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> selected and the algorithm chosen and specified, Dr. Lytical is now ready to run the <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.
 She follows the google colab link and inserts the identifier that specifies the <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.
 she wants to run.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <figure class="align-default" id="colab-button">
 <img alt="_images/colab_button.png" src="_images/colab_button.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Colab button</span><a class="headerlink" href="#colab-button" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Colab button</span><a class="headerlink" href="#colab-button" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="notebook-code">
-<img alt="_images/notebook_code.png" src="_images/notebook_code.png" />
+<img alt="_images/notebook_code_1.png" src="_images/notebook_code_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Notebook code</span><a class="headerlink" href="#notebook-code" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Notebook code</span><a class="headerlink" href="#notebook-code" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="meta-analysis-id">
+<img alt="_images/notebook_insert_meta_analysis_id.png" src="_images/notebook_insert_meta_analysis_id.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Insert meta analysis ID.</span><a class="headerlink" href="#meta-analysis-id" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>She executes the analysis and waits for the results.
 She is running a relatively small <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> so she does not have to wait long
 for the process to finish executing.</p>
-</section>
-<section id="interpreting-the-results">
-<h2>interpreting the results<a class="headerlink" href="#interpreting-the-results" title="Permalink to this heading">#</a></h2>
+<p class="rubric">interpreting the results</p>
 <p>Dr. Lytical can hardly contain her excitement, but yet she must remain calm and collected,
 otherwise she will not be able to interpret the results correctly.
 It is important to remember what inferences you can and cannot make from a <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a>.</p>
@@ -799,9 +900,7 @@ And the Z-scores have been corrected with FDR (False Discovery Rate) correction,
 are considered task negative and task positive networks, respectively.
 Since we did not differentiate between whether the coordinates included in the <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> represented an increase or decrease in activation, Dr. Lytical cannot make any inferences about whether the nAChR agonists increased or decreased activation in these regions, merely that <a class="reference internal" href="glossary.html#term-Study"><span class="xref std std-term">studies</span></a> tended to report significant coordinates within these regions.
 As a follow up analysis, Dr. Anna Lytical could label the <a class="reference internal" href="glossary.html#term-Analysis"><span class="xref std std-term">analyses</span></a> as either “activation” or “deactivation” and run a separate <a class="reference internal" href="glossary.html#term-Meta-Analysis"><span class="xref std std-term">meta-analysis</span></a> for each category.</p>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p class="rubric">Conclusion</p>
 <p>Congratulations! You’ve ran your first meta-analysis and helped Dr. Lytical
 keep her job.</p>
 <p>You’ve accomplished a lot in this tutorial:</p>
@@ -820,6 +919,7 @@ keep her job.</p>
 <p>Dr. Lytical is planning on jumping right back in to create another Project
 with her own ideas, maybe something about naturalistic data while watching Bee and
 PuppyCat, she would gladly volunteer for that study…</p>
+</div>
 </section>
 </section>
 
@@ -848,11 +948,10 @@ PuppyCat, she would gladly volunteer for that study…</p>
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="ohbm_course_intro.html"
@@ -872,10 +971,7 @@ PuppyCat, she would gladly volunteer for that study…</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -892,7 +988,14 @@ PuppyCat, she would gladly volunteer for that study…</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-goals">Learning Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#story">Story</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-for-studies">Searching for studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurostore">Neurostore</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pubmed">PubMed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manually-created-study">Manually Created Study</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation-manager-export">Citation Manager Export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dr-lytical-searches-on-pubmed">Dr. Lytical searches on Pubmed</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identification">Identification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening">Screening</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility">Eligibility</a><ul class="nav section-nav flex-column">
@@ -904,8 +1007,6 @@ PuppyCat, she would gladly volunteer for that study…</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraction-and-annotation">Extraction and Annotation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-analysis-specification">Meta-analysis specification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-meta-analysis">Running the meta-analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-results">interpreting the results</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
   </nav></div>
 
@@ -953,8 +1054,8 @@ By The Neurostuff Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
