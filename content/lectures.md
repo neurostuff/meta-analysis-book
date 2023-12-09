@@ -10,7 +10,7 @@ The last two lectures accompany the subsequent tutorial, and provide an overview
 
 ## Theory
 
-### I: Introduction to neuroimaging meta-analysis
+### I: Overview and motivation for meta-analysis
 
 by [Alejandro de la Vega](https://adelavega.github.io/)
 
