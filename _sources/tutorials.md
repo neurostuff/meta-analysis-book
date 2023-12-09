@@ -277,6 +277,12 @@ She found the file (linked below) and continued to the next step.
 With the pmid file in hand, Dr. Lytical went back to Neurosynth Compose and clicked on the "Import Studies" button
 on the top right of the curation board page.
 
+```{figure} ./figures/import_name.png
+---
+name: import name
+---
+Import name
+```
 
 When importing {term}`studies <study>`, Dr. Lytical needs to select a search source, which could be from
 the Neurosynth Compose database, PubMed, a citation manager, or a manually inserted {term}`study`.
@@ -344,11 +350,11 @@ name: identification
 Identification stage of curation
 ```
 
-```{figure} ./figures/study_view_curation.png
+```{figure} ./figures/identification_review.png
 ---
-name: study view in identification stage
+name: Identification review
 ---
-Study view in identification stage
+Identification review
 ```
 
 Dr. Lytical was now presented with the list of {term}`studies <study>` that she had imported.
@@ -365,6 +371,14 @@ of Dr. Lytical's {term}`meta-analysis`.
 Please read the title and abstracts along with Dr. Lytical and determine whether each {term}`study` has relevancy to her {term}`meta-analysis`.
 
 ## Eligibility
+
+```{figure} ./figures/custom_exclusion.png
+---
+name: Custom exclusion
+
+---
+Custom exclusion
+```
 
 With duplicates and relevancy resolved, Dr. Lytical is now ready to determine if the {term}`study` meets the eligibility criteria.
 In this stage Dr. Lytical likely needs to read the methods
@@ -518,9 +532,10 @@ learning about the different algorithms and their nuances.
 
 ```{figure} ./figures/proceed_meta_analysis.png
 ---
-name: proceed meta-analysis
+name: Meta-analysis proceed
+
 ---
-The meta-analysis stage.
+Meta-analysis proceed
 ```
 
 ```{figure} ./figures/create_meta_analysis.png
@@ -530,16 +545,17 @@ name: create meta-analysis
 Create meta-analysis
 ```
 
-```{figure} ./figures/name_meta_analysis.png
----
-name: name meta-analysis
----
-Name the meta-analysis
-```
-
 Dr. Lytical is now ready to select the {term}`analyses <analysis>` and specify the algorithm.
 She clicks on the "Meta-Analysis Specification" button and is presented with a wizard that will guide her through the process.
 She names this {term}`meta-analysis`: "overall effect".
+
+```{figure} ./figures/ma_wizard.png
+---
+name: Meta-analysis wizard
+
+---
+Meta-analysis wizard
+```
 
 For this particular {term}`meta-analysis` she chooses "included" and goes through a wizard
 to specify the algorithmic parameters for her {term}`meta-analysis`.
@@ -555,7 +571,7 @@ Dr. Lytical is now ready to specify the algorithmic parameters for her {term}`me
 She chooses ALE (Activation Likelihood Estimation; {numref}`algorithm overview`) as the algorithm and selects
 8mm as the kernel size {numref}`algorithm parameters`.
 
-```{figure} ./figures/algorithm_overview_1.png
+```{figure} ./figures/ma_algorithm.png
 ---
 name: algorithm overview
 ---
@@ -585,6 +601,15 @@ Parameter review
 
 She selects the False Discovery Rate corrector (FDR) and selects "independent",
 and 0.05 as the p-value threshold.
+
+
+```{figure} ./figures/ma_review.png
+---
+name: parameter review
+---
+Meta-analysis review
+```
+
 
 ## Running the meta-analysis
 
