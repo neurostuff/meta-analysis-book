@@ -2,28 +2,16 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: ohbm_course_intro
+root: intro
 parts:
   # - caption: Course Overview
   #   chapters:
   #   - file: 01_overview
   - caption: 2023 OHBM Tutorial
     chapters:
+    - file: lectures
     - file: tutorials
   - caption: Resources
     chapters:
     - file: sign_up
     - file: glossary
-  # - caption: Manually curated meta-analysis walkthrough
-  #   chapters:
-  #   - file: 02_planning_and_preparation
-  #   - file: 03_curation
-  #   - file: 04_extraction
-  #   - file: 05_specification
-  #   - file: 06_execution
-  #   - file: 07_interpretation
-  # - caption: Deep dives
-  #   chapters:
-  #   - file: resources.md
-  #   - file: nimare/intro-to-nimare
-
